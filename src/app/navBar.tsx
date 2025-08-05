@@ -28,9 +28,14 @@ return (
         >
         Contact
         </Link>
+        <Link href="/signUp">
         <button className="text-[#073B3A] bg-[#F5F5DC] w-20 h-9 rounded-lg -mt-1.5 cursor-pointer hover:drop-shadow-[0_0_4px_gray] transition duration-400">
         Sign Up
         </button>
+        </Link>
+        
+        
+        
     </div>
     </nav>
 );
