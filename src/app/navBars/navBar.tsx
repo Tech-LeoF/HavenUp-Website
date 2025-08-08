@@ -3,9 +3,9 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function NavBar() {
+export function NavBar() {
 return (
-    <nav className="bg-[#073B3A] flex items-center justify-between px-10 py-4 font-poppins">
+    <nav className="bg-[#073B3A] flex items-center justify-between px-10 py-4">
     <div>
         <img className="cursor-pointer hover:drop-shadow-[0_0_4px_gray] transition duration-400 w-17 h-17" src="/Imgs/Logo-BG-rounded.png" alt="" />
     </div>

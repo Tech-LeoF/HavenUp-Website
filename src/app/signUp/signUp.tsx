@@ -75,7 +75,7 @@ export default function SignUp(){
 
     };
     return(
-        <div className="max-w-md w-full p-6 bg-white rounded-xl shadow space-y-6 mt-10">
+        <div style={{ fontFamily: "'Poppins', sans-serif" }} className="max-w-md w-full p-6 bg-white rounded-xl shadow space-y-6 mt-10">
             {!verification ? (
                 <form onSubmit={registrar}>
                     <h2 className="text-2xl font-bold mb-4 text-center text-black">What would you like to do?</h2>
@@ -134,7 +134,7 @@ export default function SignUp(){
                         <input type="checkbox" className="mr-2" required />
                         <span className="text-sm text-black">I agree to the Terms of Service and Privacy Policy</span>
                     </div>
-                       <div id="clerk-captcha" />
+                    <div id="clerk-captcha" />
                     <button
                     className="bg-yellow-400 text-black p-2 mt-4 w-full rounded"
                     type="submit"
