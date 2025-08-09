@@ -4,6 +4,7 @@ import LocalNavBar from './navBars/page';
 import Step1 from './stepsInfo/step1';
 import { Geist, Geist_Mono } from 'next/font/google';
 import ClerkProviderWrapper from './providers/ClerkProviderWrapper';
+import Step2 from './stepsInfo/step2';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -27,6 +28,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <ClerkProviderWrapper>
           <LocalNavBar />
           <Step1/>
+          <Step2/>
           {children}
         </ClerkProviderWrapper>
       </body>
