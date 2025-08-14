@@ -15,8 +15,8 @@ export default function Step1(){
                         </div>
                         <div className="space-y-2">
                             <p>Property Type</p>
-                            <select className="bg-[#F5F5DC] w-60 rounded-lg w-90 h-10 p-2 text-sm">
-                                <option disabled selected hidden>Select Property Type</option>
+                            <select defaultValue='' className="bg-[#F5F5DC] w-60 rounded-lg w-90 h-10 p-2 text-sm">
+                                <option disabled value='' hidden>Select Property Type</option>
                                 <option></option>
                                 <option>Residential Home</option>
                                 <option>Apartament</option>
@@ -46,8 +46,8 @@ export default function Step1(){
                         </div>
                         <div className="space-y-2">
                             <p>Legal Status</p>
-                                <select className="bg-[#F5F5DC] w-60 rounded-lg w-90 h-10 p-2 text-sm">
-                                    <option disabled selected hidden>Select Legal Status</option>
+                                <select defaultValue='' className="bg-[#F5F5DC] w-60 rounded-lg w-90 h-10 p-2 text-sm">
+                                    <option disabled value='' hidden>Select Legal Status</option>
                                     <option></option>
                                     <option>Fully Registered</option>
                                     <option>Legalization In Process</option>

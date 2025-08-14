@@ -8,8 +8,8 @@ export default function Step3(){
             </div>
             <div className="space-y-2">
                 <p className="font-bold">Number of bedrooms</p>
-                <select className="bg-[#F5F5DC] w-60 rounded-lg w-90 h-10 p-2 text-sm">
-                    <option disabled selected hidden>Select Number Of Bedrooms</option>
+                <select defaultValue='' className="bg-[#F5F5DC] w-60 rounded-lg w-90 h-10 p-2 text-sm">
+                    <option disabled value='' hidden>Select Number Of Bedrooms</option>
                     <option></option>
                     <option>1</option>
                     <option>2</option>
@@ -23,8 +23,8 @@ export default function Step3(){
             </div>
             <div className="space-y-2">
                 <p className="font-bold">Number Of Bathrooms</p>
-                <select className="bg-[#F5F5DC] w-60 rounded-lg w-90 h-10 p-2 text-sm">
-                    <option disabled selected hidden>Select Number Of Bathrooms</option>
+                <select defaultValue='' className="bg-[#F5F5DC] w-60 rounded-lg w-90 h-10 p-2 text-sm">
+                    <option disabled value='' hidden>Select Number Of Bathrooms</option>
                     <option></option>
                     <option>1</option>
                     <option>2</option>
