@@ -1,6 +1,6 @@
 // app/layout.tsx
 import './globals.css';
-import LocalNavBar from './navBars/page';
+import Layout from './navBars/page';
 import Step1 from './stepsInfo/step1';
 import { Geist, Geist_Mono } from 'next/font/google';
 import ClerkProviderWrapper from './providers/ClerkProviderWrapper';
@@ -27,11 +27,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className="antialiased">
         <ClerkProviderWrapper>
-          <LocalNavBar />
+          <Layout>
+            {children}
+          </Layout>
           <Step1/>
           <Step2/>
           <Step3/>
-          {children}
+          
         </ClerkProviderWrapper>
       </body>
     </html>
