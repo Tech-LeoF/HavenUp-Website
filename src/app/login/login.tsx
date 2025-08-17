@@ -24,7 +24,7 @@ export default function Login() {
 
     try {
       const form = await signIn.create({
-        identifier: email,
+        identifier: email.trim(),
         password,
       });
 
