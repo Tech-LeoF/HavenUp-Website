@@ -6,6 +6,7 @@ import { Geist, Geist_Mono } from 'next/font/google';
 import ClerkProviderWrapper from './providers/ClerkProviderWrapper';
 import Step2 from './stepsInfo/step2';
 import Step3 from './stepsInfo/step3';
+import Chat from './components/chatbot';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -30,6 +31,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Layout>
             {children}
           </Layout>
+          <Chat/>
           <Step1/>
           <Step2/>
           <Step3/>
