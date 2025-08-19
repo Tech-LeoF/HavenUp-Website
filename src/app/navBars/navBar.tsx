@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useUser, useClerk } from "@clerk/nextjs";
+import { Span } from "next/dist/trace";
 
 interface NavBarProps {
   role?: "Seller" | "Buyer";
@@ -10,6 +11,9 @@ interface NavBarProps {
 export function NavBar({ role }: NavBarProps) {
   const { user, isLoaded } = useUser();
   const { signOut } = useClerk(); 
+  const NavbarProfile = ({ userImage}: { userImage?: string}) => {
+    
+  }
 
   if (!isLoaded) return null;
 
@@ -17,7 +21,7 @@ export function NavBar({ role }: NavBarProps) {
   const isBuyer = role === "Buyer";
 
   return (
-    <nav className="bg-[#073B3A] flex items-center justify-between px-10 py-4">
+    <nav className="bg-[#073B3A] flex items-center justify-between px-13 py-2">
       <div>
         <img
           className="cursor-pointer hover:drop-shadow-[0_0_4px_gray] transition duration-400 w-17 h-17"
@@ -40,7 +44,7 @@ export function NavBar({ role }: NavBarProps) {
               Selling
             </Link>
             <Link href="/publish">
-              <button className="text-[#073B3A] bg-[#F5F5DC] w-28 h-9 rounded-lg cursor-pointer hover:drop-shadow-[0_0_4px_gray] transition duration-400">
+              <button className="leading-tight  text-[#073B3A] bg-[#F5F5DC] w-28 h-9.5 rounded-lg cursor-pointer hover:drop-shadow-[0_0_4px_gray] transition duration-400">
                 Publish a house
               </button>
             </Link>
@@ -73,11 +77,15 @@ export function NavBar({ role }: NavBarProps) {
         {user && (
           <button
             onClick={() => signOut()}
-            className="text-[#073B3A] bg-[#F5F5DC] w-20 h-9 rounded-lg cursor-pointer hover:drop-shadow-[0_0_4px_gray] transition duration-400"
+            className="text-[#073B3A] bg-[#F5F5DC] relative -top-0.5 w-25 h-9.5 rounded-lg cursor-pointer hover:drop-shadow-[0_0_4px_gray] transition duration-400"
           >
-            Log Out
+            Log out
           </button>
         )}
+        <div className="w-11 h-11 bg-gray-600 rounded-full flex items-center justify-end cursor-pointer hover:drop-shadow-[0_0_4px_gray] transition">
+          <img src="https://cdn-icons-png.freepik.com/512/9706/9706583.png" alt="Avatar" className="w-10 h-10 rounded-full object-cover" />
+        </div>
+
       </div>
     </nav>
   );
