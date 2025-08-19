@@ -1,11 +1,9 @@
 // app/layout.tsx
 import './globals.css';
 import Layout from './navBars/page';
-import Step1 from './stepsInfo/step1';
+import Show from './carrusel/page';
 import { Geist, Geist_Mono } from 'next/font/google';
 import ClerkProviderWrapper from './providers/ClerkProviderWrapper';
-import Step2 from './stepsInfo/step2';
-import Step3 from './stepsInfo/step3';
 import Chat from './components/chatbot';
 
 const geistSans = Geist({
@@ -29,13 +27,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="antialiased">
         <ClerkProviderWrapper>
           <Layout>
+            <Show/>
             {children}
           </Layout>
           <Chat/>
-          <Step1/>
-          <Step2/>
-          <Step3/>
-          
         </ClerkProviderWrapper>
       </body>
     </html>
