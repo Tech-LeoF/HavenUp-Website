@@ -3,9 +3,10 @@ import { useState } from "react";
 import Link from "next/link";
 
 const images = [
+    "/Imgs/minicasa.webp",
     "/Imgs/casa.jpg",
     "/Imgs/casagrande.webp",
-    "/Imgs/minicasa.webp",
+    
     "/Imgs/servicios.jpg"
 ];
 
@@ -24,8 +25,9 @@ export default function Carrusel(){
             />
 
         {current === 0 && (
+            <>
             <div
-            className="absolute top-0 left-0 bg-blue-500/50 text-white p-6 h-125 text-left w-[700px]"
+            className="absolute top-0 left-0 bg-[#073B3A80] text-white p-6 h-125 text-left w-[700px]"
             style={{
             clipPath: "polygon(0 0, 100% 0, 80% 100%, 0% 100%)",
             }}
@@ -35,7 +37,18 @@ export default function Carrusel(){
             We are here to help you buy or sell your home without any hassle. Browse our platform and let us guide you every step so you can find exactly what you're looking for.
             </p>
             </div>
-            )};
+            <Link href="/login">
+            <button className="absolute right-45 top-60 text-[#073B3A] bg-[#F5F5DC] w-50 h-15 rounded-lg cursor-pointer hover:drop-shadow-[0_0_4px_gray] transition duration-400">
+            Login
+            </button>
+            </Link>
+            <Link href="/signUp">
+            <button className="absolute right-45 top-80 text-[#073B3A] bg-[#F5F5DC] w-50 h-15 rounded-lg cursor-pointer hover:drop-shadow-[0_0_4px_gray] transition duration-400">
+            Sign Up
+            </button>
+            </Link>
+            </>
+            )}
         <button 
         onClick={prevSlide} 
         className="absolute top-1/2 left-2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full">

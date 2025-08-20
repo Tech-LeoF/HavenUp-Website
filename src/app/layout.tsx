@@ -2,6 +2,7 @@
 import './globals.css';
 import Layout from './navBars/page';
 import Show from './carrusel/page';
+import Main from './main/page';
 import { Geist, Geist_Mono } from 'next/font/google';
 import ClerkProviderWrapper from './providers/ClerkProviderWrapper';
 import Chat from './components/chatbot';
@@ -27,9 +28,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="antialiased">
         <ClerkProviderWrapper>
           <Layout>
-            <Show/>
+            <Show/><br /><br />
+            <Main/>
             {children}
           </Layout>
+          
           <Chat/>
         </ClerkProviderWrapper>
       </body>
