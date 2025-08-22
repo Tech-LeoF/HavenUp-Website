@@ -44,7 +44,7 @@ export function NavBar({ role }: NavBarProps) {
               Selling
             </Link>
             <Link href="/publish">
-              <button className="leading-tight  text-[#073B3A] bg-[#F5F5DC] w-[clamp(3rem,8vw,15rem)] text-[clamp(0.8rem,1.5vw,2rem)] h-[clamp(2rem,6vh,9rem)] truncate  rounded-lg cursor-pointer hover:drop-shadow-[0_0_4px_gray] transition duration-400">
+              <button className="leading-tight  text-[#073B3A] bg-[#F5F5DC] w-[clamp(3rem,8vw,15rem)] text-[clamp(0.8rem,1.5vw,2rem)] h-[clamp(3rem,6vh,9rem)] rounded-lg cursor-pointer hover:drop-shadow-[0_0_4px_gray] transition duration-400">
                 Publish a house
               </button>
             </Link>
