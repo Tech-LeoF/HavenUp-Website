@@ -1,5 +1,5 @@
 'use client';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 
 const images = [
@@ -11,10 +11,24 @@ const images = [
 ];
 
 export default function Carrusel(){
+    
     const [current, setCurrent] = useState(0);
     
     const nextSlide = () => setCurrent((current +1) % images.length);
     const prevSlide = () => setCurrent((current - 1 + images.length) % images.length)
+    
+        /*
+        useEffect(() =>{
+        const interval = setInterval(() =>{
+            setCurrent(prev => (prev + 1) % images.length);
+        }, 10000)
+        return()=>clearInterval(interval);
+    }, []
+
+); */
+   
+    
+
 
     return(
         <div className="relative w-full  h-full">
@@ -27,23 +41,23 @@ export default function Carrusel(){
         {current === 0 && (
             <>
             <div
-            className="absolute top-0 left-0 bg-[#073B3A80] text-white p-6 h-125 text-left w-[700px]"
+            className="absolute top-[0rem] left-[0rem] bg-[#073B3A80]  text-white p-[clamp(1rem,4vw,2rem)] h-[78vh] text-left w-[60vw]"
             style={{
             clipPath: "polygon(0 0, 100% 0, 80% 100%, 0% 100%)",
             }}
             >
-            <h1 className="text-5xl font-bold pt-20">Welcome to HavenUp!</h1><br />
-            <p className="mt-2  pr-15 text-2xl">
+            <h1 className="text-[clamp(2rem,3vw,5rem)] font-bold pt-[3rem]">Welcome to HavenUp!</h1><br />
+            <p className="mt-[1rem]  pr-[3rem] text-[clamp(1rem,2vw,5rem)]">
             We are here to help you buy or sell your home without any hassle. Browse our platform and let us guide you every step so you can find exactly what you're looking for.
             </p>
             </div>
             <Link href="/login">
-            <button className="absolute right-45 top-60 text-[#073B3A] bg-[#F5F5DC] w-50 h-15 rounded-lg cursor-pointer hover:drop-shadow-[0_0_4px_gray] transition duration-400">
+            <button className="absolute  right-[clamp(2rem,10vw,11.5rem)] top-[clamp(1rem,20vw,15rem)] text-[#073B3A] bg-[#F5F5DC] w-[clamp(8rem,15vw,15rem)] h-[clamp(3rem,9.5vh,9.5rem)] rounded-lg cursor-pointer hover:drop-shadow-[0_0_4px_gray] transition duration-400">
             Login
             </button>
             </Link>
             <Link href="/signUp">
-            <button className="absolute right-45 top-80 text-[#073B3A] bg-[#F5F5DC] w-50 h-15 rounded-lg cursor-pointer hover:drop-shadow-[0_0_4px_gray] transition duration-400">
+            <button className="absolute  right-[clamp(2rem,10vw,11.5rem)] top-[clamp(12rem,23vw,25rem)] text-[#073B3A] bg-[#F5F5DC] w-[clamp(8rem,15vw,15rem)] h-[clamp(3rem,9.5vh,9.5rem)] rounded-lg cursor-pointer hover:drop-shadow-[0_0_4px_gray] transition duration-400">
             Sign Up
             </button>
             </Link>
