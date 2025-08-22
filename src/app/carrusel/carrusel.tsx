@@ -17,7 +17,7 @@ export default function Carrusel(){
     const nextSlide = () => setCurrent((current +1) % images.length);
     const prevSlide = () => setCurrent((current - 1 + images.length) % images.length)
     
-        /*
+        
         useEffect(() =>{
         const interval = setInterval(() =>{
             setCurrent(prev => (prev + 1) % images.length);
@@ -25,7 +25,7 @@ export default function Carrusel(){
         return()=>clearInterval(interval);
     }, []
 
-); */
+); 
    
     
 
