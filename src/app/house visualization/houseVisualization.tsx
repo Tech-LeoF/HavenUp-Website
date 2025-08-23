@@ -143,7 +143,7 @@ const HouseDetails: React.FC = () => {
             </p>
         </div>
 
-        {/* Contact */}
+        {/* Contacts */}
         <div className="mt-10 px-10 mb-10">
             <h3 className="text-lg font-semibold mb-3">Contact</h3>
             <button className="w-full bg-gray-700 text-white py-3 rounded-lg font-semibold hover:bg-gray-800">
