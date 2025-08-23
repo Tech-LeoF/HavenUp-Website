@@ -2,7 +2,7 @@
 
 export default function Tools() {
     return (
-        <div>
+        <div style={{ fontFamily: "'Poppins', sans-serif" }}>
             <h1 className="text-center text-[#073B3A] font-semibold text-[clamp(2rem,4vw,4rem)]">Tools we Offer</h1><br />
             <div className="flex  w-full max-w-[1200px] mx-auto bg-[#A2BCB5] rounded-xl overflow-hidden">
             

@@ -31,7 +31,7 @@ export default function Carrusel(){
 
 
     return(
-        <div className="relative w-full  h-full">
+        <div style={{ fontFamily: "'Poppins', sans-serif" }} className="relative w-full  h-full">
             <img 
             src={images[current]} 
             alt={`Slide ${current}`} 
