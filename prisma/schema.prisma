@@ -13,3 +13,85 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+CREATE TABLE propiedades ( 
+
+ id SERIAL PRIMARY KEY, 
+
+ usuario_id INT REFERENCES usuarios(id) ON DELETE CASCADE, -- el vendedor  
+
+titulo VARCHAR(200) NOT NULL,  
+
+descripcion TEXT, 
+
+ precio DECIMAL(12,2) NOT NULL,  
+
+direccion VARCHAR(200),  
+
+ciudad VARCHAR(100),  
+
+estado VARCHAR(100), 
+
+ pais VARCHAR(100) DEFAULT 'El Salvador',  
+
+metros_cuadrados INT,  
+
+habitaciones INT,  
+
+baños INT, 
+
+ tipo VARCHAR(50), -- casa, apartamento, terreno disponible  
+
+BOOLEAN DEFAULT TRUE,  
+
+fecha_publicacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP ); 
+
+CREATE TABLE fotos_propiedades ( 
+
+    id SERIAL PRIMARY KEY, 
+
+    propiedad_id INT REFERENCES propiedades(id) ON DELETE CASCADE, 
+
+    url_foto VARCHAR(255) NOT NULL); 
+
+CREATE TABLE favoritos ( 
+
+ id SERIAL PRIMARY KEY,  
+
+usuario_id INT REFERENCES usuarios(id) ON DELETE CASCADE, 
+
+ propiedad_id INT REFERENCES propiedades(id) ON DELETE CASCADE,  
+
+fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP,  
+
+UNIQUE(usuario_id, propiedad_id) ); 
+
+CREATE TABLE mensajes ( 
+
+    id SERIAL PRIMARY KEY, 
+
+    remitente_id INT REFERENCES usuarios(id) ON DELETE CASCADE, 
+
+    receptor_id INT REFERENCES usuarios(id) ON DELETE CASCADE, 
+
+    propiedad_id INT REFERENCES propiedades(id) ON DELETE CASCADE, 
+
+    mensaje TEXT NOT NULL, 
+
+    fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP); 
+
+CREATE TABLE reseñas ( 
+
+    id SERIAL PRIMARY KEY, 
+
+    vendedor_id INT REFERENCES usuarios(id) ON DELETE CASCADE, 
+
+    comprador_id INT REFERENCES usuarios(id) ON DELETE CASCADE, 
+
+    comentario TEXT, 
+
+    calificacion INT CHECK (calificacion BETWEEN 1 AND 5), 
+
+    fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP 
+
+); 
