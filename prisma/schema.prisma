@@ -1,97 +1,79 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
   provider = "prisma-client-js"
   output   = "../src/generated/prisma"
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
 }
 
-CREATE TABLE propiedades ( 
+model Usuario {
+  id        Int         @id @default(autoincrement())
+  nombre    String      @db.VarChar(100)
+  email     String      @unique @db.VarChar(200)
+  // otros campos...
 
- id SERIAL PRIMARY KEY, 
+  propiedades   Propiedad[]
 
- usuario_id INT REFERENCES usuarios(id) ON DELETE CASCADE, -- el vendedor  
+  // Mensajes
+  mensajesEnviados   Mensaje[] @relation("MensajesEnviados")
+  mensajesRecibidos  Mensaje[] @relation("MensajesRecibidos")
 
-titulo VARCHAR(200) NOT NULL,  
+  // Reseñas
+  reseñasRecibidas   Reseña[]  @relation("ReseñasRecibidas")
+  reseñasHechas      Reseña[]  @relation("ReseñasHechas")
 
-descripcion TEXT, 
+  @@map("usuarios")
+}
 
- precio DECIMAL(12,2) NOT NULL,  
+model Propiedad {
+  id                Int       @id @default(autoincrement())
+  usuario_id        Int
+  usuario           Usuario   @relation(fields: [usuario_id], references: [id], onDelete: Cascade)
+  titulo            String    @db.VarChar(200)
+  descripcion       String?   @db.Text
+  precio            Decimal   @db.Decimal(12, 2)
+  direccion         String?   @db.VarChar(200)
+  ciudad            String?   @db.VarChar(100)
+  estado            String?   @db.VarChar(100)
+  pais              String    @default("El Salvador") @db.VarChar(100)
+  metros_cuadrados  Int?
+  habitaciones      Int?
+  banos             Int?      @map("baños") // Prisma no soporta caracteres especiales en nombres de campos
+  tipo              String?   @db.VarChar(50) // casa, apartamento, terreno disponible
+  disponible        Boolean   @default(true)
+  fecha_publicacion DateTime  @default(now()) @db.Timestamp(6)
 
-direccion VARCHAR(200),  
+  mensajes          Mensaje[]
 
-ciudad VARCHAR(100),  
+  @@map("propiedades")
+}
 
-estado VARCHAR(100), 
+model Mensaje {
+  id           Int        @id @default(autoincrement())
+  remitente_id Int
+  remitente    Usuario    @relation("MensajesEnviados", fields: [remitente_id], references: [id], onDelete: Cascade)
+  receptor_id  Int
+  receptor     Usuario    @relation("MensajesRecibidos", fields: [receptor_id], references: [id], onDelete: Cascade)
+  propiedad_id Int
+  propiedad    Propiedad  @relation(fields: [propiedad_id], references: [id], onDelete: Cascade)
+  mensaje      String     @db.Text
+  fecha        DateTime   @default(now()) @db.Timestamp(6)
 
- pais VARCHAR(100) DEFAULT 'El Salvador',  
+  @@map("mensajes")
+}
 
-metros_cuadrados INT,  
+model Reseña {
+  id           Int      @id @default(autoincrement())
+  vendedor_id  Int
+  vendedor     Usuario  @relation("ReseñasRecibidas", fields: [vendedor_id], references: [id], onDelete: Cascade)
+  comprador_id Int
+  comprador    Usuario  @relation("ReseñasHechas", fields: [comprador_id], references: [id], onDelete: Cascade)
+  comentario   String?  @db.Text
+  calificacion Int
+  fecha        DateTime @default(now()) @db.Timestamp(6)
 
-habitaciones INT,  
-
-baños INT, 
-
- tipo VARCHAR(50), -- casa, apartamento, terreno disponible  
-
-BOOLEAN DEFAULT TRUE,  
-
-fecha_publicacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP ); 
-
-CREATE TABLE fotos_propiedades ( 
-
-    id SERIAL PRIMARY KEY, 
-
-    propiedad_id INT REFERENCES propiedades(id) ON DELETE CASCADE, 
-
-    url_foto VARCHAR(255) NOT NULL); 
-
-CREATE TABLE favoritos ( 
-
- id SERIAL PRIMARY KEY,  
-
-usuario_id INT REFERENCES usuarios(id) ON DELETE CASCADE, 
-
- propiedad_id INT REFERENCES propiedades(id) ON DELETE CASCADE,  
-
-fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP,  
-
-UNIQUE(usuario_id, propiedad_id) ); 
-
-CREATE TABLE mensajes ( 
-
-    id SERIAL PRIMARY KEY, 
-
-    remitente_id INT REFERENCES usuarios(id) ON DELETE CASCADE, 
-
-    receptor_id INT REFERENCES usuarios(id) ON DELETE CASCADE, 
-
-    propiedad_id INT REFERENCES propiedades(id) ON DELETE CASCADE, 
-
-    mensaje TEXT NOT NULL, 
-
-    fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP); 
-
-CREATE TABLE reseñas ( 
-
-    id SERIAL PRIMARY KEY, 
-
-    vendedor_id INT REFERENCES usuarios(id) ON DELETE CASCADE, 
-
-    comprador_id INT REFERENCES usuarios(id) ON DELETE CASCADE, 
-
-    comentario TEXT, 
-
-    calificacion INT CHECK (calificacion BETWEEN 1 AND 5), 
-
-    fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP 
-
-); 
+  @@map("reseñas")
+}
