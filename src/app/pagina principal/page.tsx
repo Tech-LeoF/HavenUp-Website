@@ -10,7 +10,7 @@ return (
         className="absolute inset-0 z-0 bg-cover bg-center"
         style={{
             backgroundImage:
-            "url('4a59584df9da7bba45aa001e670a2bda 1.png')",
+            "url('casa.png')",
         }}
         ></div>
 
