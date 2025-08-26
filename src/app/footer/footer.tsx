@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { FaFacebookF, FaInstagram, FaYoutube, FaTiktok } from 'react-icons/fa'
- 
+
 const Footer: React.FC = () => {
     return (
     <footer className="bg-[#0c3a3a] text-[#a9b1b1] p-6 rounded-t-md">
@@ -21,7 +21,7 @@ const Footer: React.FC = () => {
             </p>
             <p className="text-xs mt-8">*2025 Dterms. All Rights reserved</p>
         </div>
- 
+
         {/* Links */}
         <nav className="flex flex-col space-y-4 min-w-[120px]" aria-label="Links">
             <h4 className="text-white border-l-2 border-[#66CDAA] pl-2 mb-2">Links</h4>
@@ -55,7 +55,7 @@ const Footer: React.FC = () => {
             Corporate
             </a>
         </nav>
- 
+
         {/* Others column 2 with social icons */}
         <div className="flex flex-col space-y-4 min-w-[140px]">
             <h4 className="text-white border-l-2 border-[#66CDAA] pl-2 mb-2">Others</h4>
