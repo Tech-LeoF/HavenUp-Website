@@ -1,13 +1,13 @@
 import React from "react";
 
-const PaginaPrincipal: React.FC = () => {
+export default function Page(){ 
     return (
         <div className="bg-pink-100">
             {/* Hero Section */}
             <div className="relative w-full h-screen flex items-center justify-center">
                 <div
                     className="absolute inset-0 z-0 bg-contain bg-center"
-                    style={{ backgroundImage: "url('casa1.png')" }}
+                    style={{ backgroundImage: "url('/Imgs/casa1.png')" }}
                 ></div>
 
                 <div className="z-10 flex flex-col items-start w-full px-4 md:px-0 max-w-2xl">
@@ -85,7 +85,7 @@ const PaginaPrincipal: React.FC = () => {
                     {/* House 1 */}
                     <div className="bg-white rounded-lg shadow-md overflow-hidden">
                         <img
-                            src="casamiramonte.png"
+                            src="/Imgs/casamiramonte.png"
                             alt="House in Mira Monte"
                             className="w-full h-48 object-cover"
                         />
@@ -96,7 +96,7 @@ const PaginaPrincipal: React.FC = () => {
                             <p className="text-gray-600 text-sm">San Salvador</p>
                             <ul className="flex flex-wrap gap-4 mt-2 text-sm text-gray-700">
                                 <li>136m²</li>
-                                <li>3🛏️</li>
+                                <li>3🛏</li>
                                 <li>2🛁</li>
                                 <li>1🚗</li>
                             </ul>
@@ -106,7 +106,7 @@ const PaginaPrincipal: React.FC = () => {
                     {/* House 2 */}
                     <div className="bg-white rounded-lg shadow-md overflow-hidden">
                         <img
-                            src="casasanluis.png"
+                            src="/Imgs/casasanluis.png"
                             alt="House in San Luis"
                             className="w-full h-48 object-cover"
                         />
@@ -117,7 +117,7 @@ const PaginaPrincipal: React.FC = () => {
                             <p className="text-gray-600 text-sm">San Salvador</p>
                             <ul className="flex flex-wrap gap-4 mt-2 text-sm text-gray-700">
                                 <li>111m²</li>
-                                <li>3🛏️</li>
+                                <li>3🛏</li>
                                 <li>2🛁</li>
                                 <li>1🚗</li>
                             </ul>
@@ -127,7 +127,7 @@ const PaginaPrincipal: React.FC = () => {
                     {/* House 3 */}
                     <div className="bg-white rounded-lg shadow-md overflow-hidden">
                         <img
-                            src="casaabad.png"
+                            src="/Imgs/casaabad.png"
                             alt="House in San Luis Abad"
                             className="w-full h-48 object-cover"
                         />
@@ -138,7 +138,7 @@ const PaginaPrincipal: React.FC = () => {
                             <p className="text-gray-600 text-sm">San Salvador</p>
                             <ul className="flex flex-wrap gap-4 mt-2 text-sm text-gray-700">
                                 <li>100m²</li>
-                                <li>2🛏️</li>
+                                <li>2🛏</li>
                                 <li>1🛁</li>
                                 <li>1🚗</li>
                             </ul>
@@ -148,7 +148,7 @@ const PaginaPrincipal: React.FC = () => {
                     {/* House 4 */}
                     <div className="bg-white rounded-lg shadow-md overflow-hidden">
                         <img
-                            src="casaresidencial.png"
+                            src="/Imgs/casaresidencial.png"
                             alt="House in Residencial Monte Carlo"
                             className="w-full h-48 object-cover"
                         />
@@ -159,7 +159,7 @@ const PaginaPrincipal: React.FC = () => {
                             <p className="text-gray-600 text-sm">San Salvador</p>
                             <ul className="flex flex-wrap gap-4 mt-2 text-sm text-gray-700">
                                 <li>136m²</li>
-                                <li>3🛏️</li>
+                                <li>3🛏</li>
                                 <li>3🛁</li>
                                 <li>4🚗</li>
                             </ul>
@@ -169,7 +169,7 @@ const PaginaPrincipal: React.FC = () => {
                     {/* House 5 */}
                     <div className="bg-white rounded-lg shadow-md overflow-hidden">
                         <img
-                            src="casaversalles.png"
+                            src="/Imgs/casaversalles.png"
                             alt="House in Ciudad Versalles"
                             className="w-full h-48 object-cover"
                         />
@@ -180,7 +180,7 @@ const PaginaPrincipal: React.FC = () => {
                             <p className="text-gray-600 text-sm">San Juan Opico</p>
                             <ul className="flex flex-wrap gap-4 mt-2 text-sm text-gray-700">
                                 <li>460m²</li>
-                                <li>6🛏️</li>
+                                <li>6🛏</li>
                                 <li>3🛁</li>
                                 <li>4🚗</li>
                             </ul>
@@ -190,7 +190,7 @@ const PaginaPrincipal: React.FC = () => {
                     {/* House 6 */}
                     <div className="bg-white rounded-lg shadow-md overflow-hidden">
                         <img
-                            src="casabenito.png"
+                            src="/Imgs/casabenito.png"
                             alt="House in Colonia San Benito"
                             className="w-full h-48 object-cover"
                         />
@@ -201,7 +201,7 @@ const PaginaPrincipal: React.FC = () => {
                             <p className="text-gray-600 text-sm">San Salvador</p>
                             <ul className="flex flex-wrap gap-4 mt-2 text-sm text-gray-700">
                                 <li>710m²</li>
-                                <li>5🛏️</li>
+                                <li>5🛏</li>
                                 <li>4🛁</li>
                                 <li>3🚗</li>
                             </ul>
@@ -214,7 +214,7 @@ const PaginaPrincipal: React.FC = () => {
             <div className="relative w-full flex items-center justify-center bg-gray-900 py-20">
                 <div
                     className="absolute inset-0 bg-cover bg-center opacity-70"
-                    style={{ backgroundImage: "url('caareseña.png')" }}
+                    style={{ backgroundImage: "url('/Imgs/caareseña.png')" }}
                 ></div>
                 <div className="relative z-10 text-center max-w-2xl px-4">
                     <h2 className="text-2xl sm:text-3xl font-semibold text-white mb-6">
@@ -250,18 +250,18 @@ const PaginaPrincipal: React.FC = () => {
 
             {/* Reviews Section */}
             <div className="px-6 py-8 bg-white">
-                <h3 className="text-xl font-bold mb-6">Top Reviews</h3>
+                <h3 className="text-xl font-bold mb-6 text-black">Top Reviews</h3>
                 {/* Reseña 1 */}
                 <div className="bg-green-50 rounded-lg p-4 mb-4 shadow-sm">
                     <div className="flex items-center gap-3">
                         {/* 🔹 Avatar Karla */}
                         <img
-                            src="perfil 1.png"
+                            src="/Imgs/perfil 1.png"
                             alt="Karla"
                             className="w-10 h-10 rounded-full border"
                         />
                         <div>
-                            <p className="font-semibold">Karla Polanco</p>
+                            <p className="font-semibold text-black">Karla Polanco</p>
                             <span className="text-gray-500 text-sm">Posted 3 days ago</span>
                         </div>
                     </div>
@@ -277,12 +277,12 @@ const PaginaPrincipal: React.FC = () => {
                     <div className="flex items-center gap-3">
                         {/* 🔹 Avatar Marco */}
                         <img
-                            src="perfil2.png"
+                            src="/Imgs/perfil2.png"
                             alt="Marco"
                             className="w-10 h-10 rounded-full border"
                         />
                         <div>
-                            <p className="font-semibold">Marco Ayala</p>
+                            <p className="font-semibold text-black">Marco Ayala</p>
                             <span className="text-gray-500 text-sm">Posted 2 days ago</span>
                         </div>
                     </div>
@@ -296,8 +296,6 @@ const PaginaPrincipal: React.FC = () => {
         </div>
     );
 };
-
-export default PaginaPrincipal;
 
 
 
