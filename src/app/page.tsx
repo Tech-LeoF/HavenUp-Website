@@ -2,7 +2,7 @@
 
 import Show from './carrusel/page';
 import Main from './main/page';
-import Chat from './components/chatbot';
+import Chat from './chatbot/chatbot';
 import Pilares from './main/pilares/page';
 import Us from './main/aboutUs/page';
 

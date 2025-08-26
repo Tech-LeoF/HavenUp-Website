@@ -1,9 +1,18 @@
 'use client';
 import { useState } from 'react';
+import { useUser, useClerk } from "@clerk/nextjs";
 
 export default function Chat() {
 const [input, setInput] = useState('');
 const [response, setResponse] = useState('');
+const { user } = useUser();
+
+  const getInitial = (name?: string |null) => {
+    if(!name) return "?";
+    const parts = name.trim().split(" ");
+    if(parts.length === 1) return parts[0][0].toUpperCase();
+    return (parts[0][0] + parts[parts.length -1][0]).toUpperCase();
+  }
 
 const sendMessage = async () => {
     if (!input.trim()) return;
@@ -51,7 +60,23 @@ return (
 
       {/* Input Row */}
     <div className="flex flex-row justify-center space-x-4 mt-6">
-        <img className="h-12 cursor-pointer" src="/Imgs/user .png" alt="User" />
+         {user ? (
+        user.imageUrl ? (
+        <img
+        src={user.imageUrl}
+        alt="Avatar"
+        className="w-11 h-11 rounded-full object-cover cursor-pointer hover:drop-shadow-[0_0_4px_gray] transition"
+        />
+        ) : (
+        <div className="w-11 h-11 bg-gray-600 text-white font-semibold rounded-full flex items-center justify-center cursor-pointer hover:drop-shadow-[0_0_4px_gray] transition">
+        {getInitial(user.fullName || user.username || "")}
+        </div>
+        )
+        ) : (
+        <div className="w-11 h-11 bg-gray-400 rounded-full flex items-center justify-center cursor-pointer hover:drop-shadow-[0_0_4px_gray] transition">
+        ?
+        </div>
+        )}
         <textarea
         className="rounded-lg border-2 border-black text-black h-12 w-150 placeholder:pl-2 py-3"
         value={input}
