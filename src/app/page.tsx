@@ -5,6 +5,7 @@ import Main from './main/page';
 import Chat from './components/chatbot';
 import Pilares from './main/pilares/page';
 
+
 export default function home(){
     return (
     <>
