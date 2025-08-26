@@ -96,8 +96,8 @@ return (
 
       {/* Chat Area */}
         <main className="flex-1 p-6 flex flex-col space-y-4">
-        <h2 className="text-[clamp(1.5rem,4vw,3rem)] font-bold mb-4 text-[#073B3A]">
-            Conversation with The Seller
+        <h2 className="text-[clamp(1rem,2.5vw,1.75rem)] font-bold mb-4 text-[#073B3A]">
+        Conversation with The Seller
         </h2>
 
         {/* Messages */}
@@ -144,20 +144,20 @@ return (
 
             {/* Photo */}
             <label className="cursor-pointer">
-                <img src="/camara.png" alt="Camara" className="w-7 h-7 sm:w-8 sm:h-8" />
+                <img src="/Imgs/camara.png" alt="Camara" className="w-7 h-7 sm:w-8 sm:h-8" />
                 <input type="file" accept="image/*" onChange={handlePhoto} className="hidden" />
             </label>
 
             {/* Video */}
             <label className="cursor-pointer">
-                <img src="/video.png" alt="Video" className="w-7 h-7 sm:w-8 sm:h-8" />
+                <img src="/Imgs/video.png" alt="Video" className="w-7 h-7 sm:w-8 sm:h-8" />
                 <input type="file" accept="video/*" onChange={handleVideo} className="hidden" />
             </label>
 
             {/* Audio */}
             <button type="button" onClick={handleAudio}>
             <img
-                src={mediaRecorder ? "/grabar.png" : "/microfono.png"}
+                src={mediaRecorder ? "/Imgs/grabar.png" : "/Imgs/micrófono.png"}
                 alt="Audio"
                 className="w-7 h-7 sm:w-8 sm:h-8"
             />
