@@ -49,7 +49,7 @@ export function NavBar({ role }: NavBarProps) {
               Selling
             </Link>
             <Link href="/publish">
-              <button className="leading-tight  text-[#073B3A] bg-[#F5F5DC] w-[clamp(3rem,8vw,15rem)] text-[clamp(0.8rem,1.5vw,2rem)] h-[clamp(3rem,6vh,9rem)] rounded-lg cursor-pointer hover:drop-shadow-[0_0_4px_gray] transition duration-400">
+              <button className=" mt-0.5 leading-tight  text-[#073B3A] bg-[#F5F5DC] w-[clamp(3rem,8vw,15rem)] text-[clamp(0.7rem,1.2vw,1rem)] h-[clamp(2rem,6.1vh,8rem)] rounded-lg cursor-pointer hover:drop-shadow-[0_0_4px_gray] transition duration-400">
                 Publish a house
               </button>
             </Link>
@@ -64,13 +64,13 @@ export function NavBar({ role }: NavBarProps) {
         {isBuyer && (
           <>
           <Link href="/buy">
-            <button className="text-[#073B3A] bg-[#F5F5DC] w-[clamp(3rem,10vw,18rem)] text-[clamp(0.8rem,1.5vw,2rem)] h-[clamp(2rem,6vh,9rem)] truncate  rounded-lg cursor-pointer hover:drop-shadow-[0_0_4px_gray] transition duration-400">
+            <button className="text-[#073B3A] bg-[#F5F5DC] w-[clamp(3rem,10vw,18rem)] text-[clamp(0.7rem,1.2vw,1rem)] h-[clamp(2rem,6vh,9rem)] truncate  rounded-lg cursor-pointer hover:drop-shadow-[0_0_4px_gray] transition duration-400">
               Buy houses
             </button>
           </Link>
-           <Link href="/perfil">
+          <Link href="/perfil">
       <button className="text-[#073B3A] bg-[#F5F5DC] w-[clamp(3rem,8vw,15rem)] text-[clamp(0.7rem,1.2vw,1rem)] h-[clamp(2rem,6vh,3rem)] rounded-lg cursor-pointer hover:drop-shadow-[0_0_4px_gray] transition duration-400">
-       Settigns
+      Settigns
       </button>
     </Link>
           </>
@@ -96,7 +96,7 @@ export function NavBar({ role }: NavBarProps) {
         {user && (
           <button
             onClick={() => signOut()}
-            className="text-[#073B3A] bg-[#F5F5DC] relative -top-0.5 w-[clamp(3rem,8vw,15rem)] text-[clamp(0.8rem,1.5vw,2rem)] h-[clamp(2rem,6vh,9rem)] truncate  rounded-lg cursor-pointer hover:drop-shadow-[0_0_4px_gray] transition duration-400"
+            className="text-[#073B3A] bg-[#F5F5DC] relative -top-0.1 w-[clamp(3rem,8vw,15rem)] text-[clamp(0.7rem,1.2vw,1rem)] h-[clamp(2rem,6vh,9rem)] truncate  rounded-lg cursor-pointer hover:drop-shadow-[0_0_4px_gray] transition duration-400"
           >
             Log out
           </button>
