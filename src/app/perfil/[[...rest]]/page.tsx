@@ -1,11 +1,11 @@
-'use client';
+'use client'
 
-import { UserProfile } from "@clerk/nextjs";
+import Perfil from "./perfil"
 
-export default function Perfil() {
-  return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-100">
-      <UserProfile path="/perfil" routing="path" />
-    </div>
-  );
+export default function Perfiles(){
+    return(
+        <main className="min-h-screen flex items-center justify-center bg-gray-50">
+            <Perfil></Perfil>
+        </main>
+    )
 }
