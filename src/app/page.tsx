@@ -5,6 +5,7 @@ import Main from './main/page';
 import Chat from './chatbot/chatbot';
 import Pilares from './main/pilares/page';
 import Us from './main/aboutUs/page';
+import Footer from './footer/footer';
 
 
 export default function home(){
@@ -17,6 +18,9 @@ export default function home(){
     <br /><br />
     <Us/><br /><br />
     <Chat/>
+    <br /> <br />
+    <Footer/>
+    
 
     
     </>
