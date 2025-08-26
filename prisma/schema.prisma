@@ -32,19 +32,23 @@ model Propiedad {
   id                Int       @id @default(autoincrement())
   usuario_id        Int
   usuario           Usuario   @relation(fields: [usuario_id], references: [id], onDelete: Cascade)
-  titulo            String    @db.VarChar(200)
+  title             String    @db.VarChar(200)
   descripcion       String?   @db.Text
-  precio            Decimal   @db.Decimal(12, 2)
+  price             Decimal   @db.Decimal(12, 2)
   direccion         String?   @db.VarChar(200)
-  ciudad            String?   @db.VarChar(100)
-  estado            String?   @db.VarChar(100)
+  location          String?   @db.VarChar(100)
+  legal_status      String?   @db.VarChar(100)
   pais              String    @default("El Salvador") @db.VarChar(100)
-  metros_cuadrados  Int?
+  built_area        Int?
+  land_area         Int?
   habitaciones      Int?
   banos             Int?      @map("baños") // Prisma no soporta caracteres especiales en nombres de campos
-  tipo              String?   @db.VarChar(50) // casa, apartamento, terreno disponible
+  property_type     String?   @db.VarChar(50) // casa, apartamento, terreno disponible
   disponible        Boolean   @default(true)
   fecha_publicacion DateTime  @default(now()) @db.Timestamp(6)
+  fotos  String[] @db.VarChar(300) // Ej: ["foto1.jpg", "imagen_123.png"]
+  videos String[] @db.VarChar(300) // Ej: ["video_intro.mp4", "recorrido_1.mov"]
+  document String[] @db.VarChar(300) // Ej: ["document1.jpg", "imagen_123.png"]
 
   mensajes          Mensaje[]
 

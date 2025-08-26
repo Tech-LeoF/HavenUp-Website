@@ -164,4 +164,5 @@ export default function SignUp(){
             )}
         </div>
     );
-}
+    
+} import Footer from "../footer/footer";
