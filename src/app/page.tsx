@@ -4,6 +4,7 @@ import Show from './carrusel/page';
 import Main from './main/page';
 import Chat from './components/chatbot';
 import Pilares from './main/pilares/page';
+import Us from './main/aboutUs/page';
 
 
 export default function home(){
@@ -14,7 +15,9 @@ export default function home(){
     <Main/><br /><br /><br />
     <Pilares/>
     <br /><br />
+    <Us/><br /><br />
     <Chat/>
+
     
     </>
     )

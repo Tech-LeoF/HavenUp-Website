@@ -39,7 +39,7 @@ export function NavBar({ role }: NavBarProps) {
         <Link href="/" className="hover:drop-shadow-[0_0_4px_gray] text-[clamp(0.5rem,2vw,1rem)] transition duration-400 cursor-pointer">
           Home
         </Link>
-        <Link href="/about-us" className="hover:drop-shadow-[0_0_4px_gray] text-[clamp(0.5rem,2vw,1rem)] transition duration-400 cursor-pointer">
+        <Link href="/main/aboutUs" className="hover:drop-shadow-[0_0_4px_gray] text-[clamp(0.5rem,2vw,1rem)] transition duration-400 cursor-pointer">
           About Us
         </Link>
 
@@ -53,7 +53,7 @@ export function NavBar({ role }: NavBarProps) {
                 Publish a house
               </button>
             </Link>
-             <Link href="/perfil">
+            <Link href="/perfil">
       <button className="text-[#073B3A] bg-[#F5F5DC] w-[clamp(3rem,8vw,15rem)] text-[clamp(0.7rem,1.2vw,1rem)] h-[clamp(2rem,6vh,3rem)] rounded-lg cursor-pointer hover:drop-shadow-[0_0_4px_gray] transition duration-400">
         Settings
       </button>
