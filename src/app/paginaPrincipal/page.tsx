@@ -9,10 +9,43 @@ type House = {
     details: string[];
 };
 
-export default function Page() {
-    const [search, setSearch] = useState<string>("");
+type Review = {
+    id: number;
+    name: string;
+    avatar: string;
+    date: string;
+    rating: number;
+    comment: string;
+};
 
-    // 🔹 Casas en un arreglo
+export default function Page() {
+    const [search, setSearch] = useState("");
+    const [reviews, setReviews] = useState<Review[]>([
+        {
+            id: 1,
+            name: "Karla Polanco",
+            avatar: "/Imgs/perfil 1.png",
+            date: "Posted 3 days ago",
+            rating: 5,
+            comment:
+                "This app is very functional and makes it easy to find houses quickly and without complications.",
+        },
+        {
+            id: 2,
+            name: "Marco Ayala",
+            avatar: "/Imgs/perfil2.png",
+            date: "Posted 2 days ago",
+            rating: 5,
+            comment:
+                "I really like the 3D view, it’s clear and easy to explore every detail of the houses.",
+        },
+    ]);
+
+    const [newComment, setNewComment] = useState("");
+    const [newName, setNewName] = useState("");
+    const [newRating, setNewRating] = useState(5);
+    const [isFormOpen, setIsFormOpen] = useState(false);
+
     const houses: House[] = [
         {
             id: 1,
@@ -58,12 +91,30 @@ export default function Page() {
         },
     ];
 
-    // 🔹 Filtrador de casas en el buscadorv
     const filteredHouses = houses.filter(
         (house) =>
             house.title.toLowerCase().includes(search.toLowerCase()) ||
             house.city.toLowerCase().includes(search.toLowerCase())
     );
+
+    const addReview = () => {
+        if (!newName.trim() || !newComment.trim()) return;
+
+        const newReview: Review = {
+            id: reviews.length + 1,
+            name: newName,
+            avatar: "/Imgs/default-avatar.png",
+            date: "Just now",
+            rating: newRating,
+            comment: newComment,
+        };
+
+        setReviews([newReview, ...reviews]);
+        setNewName("");
+        setNewComment("");
+        setNewRating(5);
+        setIsFormOpen(false);
+    };
 
     return (
         <div className="bg-pink-100">
@@ -73,7 +124,6 @@ export default function Page() {
                     className="absolute inset-0 z-0 bg-contain bg-center"
                     style={{ backgroundImage: "url('/Imgs/casa1.png')" }}
                 ></div>
-
                 <div className="z-10 flex flex-col items-start w-full px-4 md:px-0 max-w-2xl">
                     <h1 className="text-4xl sm:text-5xl font-bold text-white mb-2">
                         Looking for the perfect place?
@@ -90,24 +140,17 @@ export default function Page() {
                             >
                                 <path
                                     fillRule="evenodd"
-                                    d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 
-                    1110.89 3.476l4.817 4.817a1 1 0 
-                    01-1.414 1.414l-4.816-4.816A6 6 0 
-                    012 8z"
+                                    d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
                                     clipRule="evenodd"
                                 ></path>
                             </svg>
                         </div>
                         <input
                             type="text"
-                            id="search-input"
                             className="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-white focus:ring-blue-500 focus:border-blue-500"
-                            placeholder="ask"
+                            placeholder="Search houses"
                             value={search}
-                            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                                setSearch(e.target.value)
-                            }
-                            required
+                            onChange={(e) => setSearch(e.target.value)}
                         />
                     </div>
                 </div>
@@ -115,7 +158,6 @@ export default function Page() {
 
             {/* Properties Section */}
             <div className="bg-gray-100 py-10 px-4">
-                {/* 🔹 Botones de filtro */}
                 <div className="max-w-6xl mx-auto px-4 mb-6 flex items-center space-x-2">
                     <button className="bg-white hover:bg-gray-100 text-gray-800 font-medium py-2 px-4 rounded-lg border border-gray-300">
                         Popular
@@ -135,24 +177,27 @@ export default function Page() {
                             <path
                                 strokeLinecap="round"
                                 strokeLinejoin="round"
-                                d="M10.5 6h9.75M10.5 6a1.5 1.5 0 
-                    11-3 0 1.5 1.5 0 013 0zm0 
-                    6h9.75M10.5 12a1.5 1.5 0 
-                    11-3 0 1.5 1.5 0 013 0zm0 
-                    6h9.75M10.5 18a1.5 1.5 0 
-                    11-3 0 1.5 1.5 0 013 0z"
+                                d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zm0 6h9.75M10.5 12a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zm0 6h9.75M10.5 18a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"
                             />
                         </svg>
                     </button>
                 </div>
 
-                {/* Grid de casas */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
                     {filteredHouses.map((house) => (
-                        <div key={house.id} className="bg-white rounded-lg shadow-md overflow-hidden">
-                            <img src={house.img} alt={house.title} className="w-full h-48 object-cover" />
+                        <div
+                            key={house.id}
+                            className="bg-white rounded-lg shadow-md overflow-hidden"
+                        >
+                            <img
+                                src={house.img}
+                                alt={house.title}
+                                className="w-full h-48 object-cover"
+                            />
                             <div className="p-4">
-                                <h3 className="text-lg font-semibold text-gray-900">{house.title}</h3>
+                                <h3 className="text-lg font-semibold text-gray-900">
+                                    {house.title}
+                                </h3>
                                 <p className="text-gray-600 text-sm">{house.city}</p>
                                 <ul className="flex flex-wrap gap-4 mt-2 text-sm text-gray-700">
                                     {house.details.map((detail, index) => (
@@ -165,7 +210,7 @@ export default function Page() {
                 </div>
             </div>
 
-            {/* ✨ Review Input Section */}
+            {/* Review Input Section */}
             <div className="relative w-full flex items-center justify-center bg-gray-900 py-20">
                 <div
                     className="absolute inset-0 bg-cover bg-center opacity-70"
@@ -176,27 +221,44 @@ export default function Page() {
                         Share your opinion and help others find their home.
                     </h2>
 
-                    {/* shareyour opinion */}
-                    <div className="flex bg-white rounded-full shadow-lg overflow-hidden max-w-xl mx-auto">
-                        <div className="flex items-center pl-4 text-gray-400">
-                            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                                <path
-                                    fillRule="evenodd"
-                                    d="M8 4a4 4 0 100 8 4 4 0 
-                  000-8zM2 8a6 6 0 
-                  1110.89 3.476l4.817 4.817a1 1 0 
-                  01-1.414 1.414l-4.816-4.816A6 6 0 
-                  012 8z"
-                                    clipRule="evenodd"
-                                ></path>
-                            </svg>
-                        </div>
+                    {/* Comentario con formulario desplegable */}
+                    <div className="flex flex-col max-w-xl mx-auto mt-4 bg-black-40">
                         <input
                             type="text"
                             placeholder="Write your review"
-                            className="flex-1 px-4 py-3 text-sm focus:outline-none"
+                            className="flex-1 px-4 py-3 text-sm rounded-l-full focus:outline-none"
+                            value={newComment}
+                            onFocus={() => setIsFormOpen(true)}
+                            onChange={(e) => setNewComment(e.target.value)}
                         />
-                        <button className="bg-green-600 hover:bg-green-700 text-white font-medium px-6 py-3">
+
+                        {isFormOpen && (
+                            <div className="flex flex-col gap-2 mt-2">
+                                <input
+                                    type="text"
+                                    placeholder="Your name"
+                                    className="px-4 py-2 rounded-lg border focus:outline-none"
+                                    value={newName}
+                                    onChange={(e) => setNewName(e.target.value)}
+                                />
+                                <select
+                                    value={newRating}
+                                    onChange={(e) => setNewRating(Number(e.target.value))}
+                                    className="px-4 py-2 rounded-lg border focus:outline-none bg-gray-500"
+                                >
+                                    <option value={1}>★</option>
+                                    <option value={2}>★★</option>
+                                    <option value={3}>★★★</option>
+                                    <option value={4}>★★★★</option>
+                                    <option value={5}>★★★★★</option>
+                                </select>
+                            </div>
+                        )}
+
+                        <button
+                            className="bg-green-600 hover:bg-green-700 text-white font-medium px-6 py-3 rounded-full mt-2 self-end"
+                            onClick={addReview}
+                        >
                             Send
                         </button>
                     </div>
@@ -207,45 +269,26 @@ export default function Page() {
             <div className="px-6 py-8 bg-white">
                 <h3 className="text-xl font-bold mb-6 text-black">Top Reviews</h3>
 
-                {/* Reseña 1 */}
-                <div className="bg-green-50 rounded-lg p-4 mb-4 shadow-sm">
-                    <div className="flex items-center gap-3">
-                        <img
-                            src="/Imgs/perfil 1.png"
-                            alt="Karla"
-                            className="w-10 h-10 rounded-full border"
-                        />
-                        <div>
-                            <p className="font-semibold text-black">Karla Polanco</p>
-                            <span className="text-gray-500 text-sm">Posted 3 days ago</span>
+                {reviews.map((review) => (
+                    <div
+                        key={review.id}
+                        className="bg-green-50 rounded-lg p-4 mb-4 shadow-sm"
+                    >
+                        <div className="flex items-center gap-3">
+                            <img
+                                src={review.avatar}
+                                alt={review.name}
+                                className="w-10 h-10 rounded-full border"
+                            />
+                            <div>
+                                <p className="font-semibold text-black">{review.name}</p>
+                                <span className="text-gray-500 text-sm">{review.date}</span>
+                            </div>
                         </div>
+                        <p className="text-yellow-500 mt-2">{'★'.repeat(review.rating)}</p>
+                        <p className="text-gray-700 mt-1">{review.comment}</p>
                     </div>
-                    <p className="text-yellow-500 mt-2">★★★★★</p>
-                    <p className="text-gray-700 mt-1">
-                        This app is very functional and makes it easy to find houses quickly
-                        and without complications.
-                    </p>
-                </div>
-
-                {/* Reseña 2 */}
-                <div className="bg-green-50 rounded-lg p-4 shadow-sm">
-                    <div className="flex items-center gap-3">
-                        <img
-                            src="/Imgs/perfil2.png"
-                            alt="Marco"
-                            className="w-10 h-10 rounded-full border"
-                        />
-                        <div>
-                            <p className="font-semibold text-black">Marco Ayala</p>
-                            <span className="text-gray-500 text-sm">Posted 2 days ago</span>
-                        </div>
-                    </div>
-                    <p className="text-yellow-500 mt-2">★★★★★</p>
-                    <p className="text-gray-700 mt-1">
-                        I really like the 3D view, it’s clear and easy to explore every
-                        detail of the houses.
-                    </p>
-                </div>
+                ))}
             </div>
         </div>
     );
