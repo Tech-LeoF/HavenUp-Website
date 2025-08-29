@@ -7,6 +7,7 @@ type House = {
     city: string;
     img: string;
     details: string[];
+    
 };
 
 type Review = {
