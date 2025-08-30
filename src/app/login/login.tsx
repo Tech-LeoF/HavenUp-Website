@@ -72,6 +72,13 @@ export default function Login() {
         </button>
         {errorMsg && <p className="text-red-600 mt-2">{errorMsg}</p>}
       </form>
+
+      {/* Link a la página de recuperar contraseña */}
+      <p className="mt-2 text-sm">
+        <a href="/forgot-password" className="text-blue-500 underline">
+          ¿Olvidaste tu contraseña?
+        </a>
+      </p>
     </div>
   );
 }
