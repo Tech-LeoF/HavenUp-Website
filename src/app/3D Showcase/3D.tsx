@@ -7,7 +7,7 @@ import { useEffect, useRef } from "react";
 import { div } from "three/tsl";
 
 function HouseModel() {
-    const { scene } = useGLTF("/HomeSample3D.glb");
+    const { scene } = useGLTF("");
     return (
         <primitive
         object={scene}
