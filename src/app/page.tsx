@@ -2,18 +2,16 @@
 
 import Show from './carrusel/page';
 import Main from './main/page';
-import Chat from './components/chatbot';
+import Chat from './Chatbot/chatbot';
 import Pilares from './main/pilares/page';
+import Footer from './footer/footer';
+import HouseViewer from './3D Showcase/3D';
 
 export default function home(){
     return (
     <>
-    <Show/>
-    <br /><br />
-    <Main/><br /><br /><br />
-    <Pilares/>
-    <br /><br />
-    <Chat/>
+    <HouseViewer/>
+    <Footer/>
     
     </>
     )

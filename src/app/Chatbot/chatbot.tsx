@@ -66,7 +66,6 @@ return (
         </button>
     </div>
 
-      {/* Response Box */}
     <div className="flex justify-center mt-6">
         <div className="w-150 h-100 bg-gray-100 border-2 flex justify-start items-start rounded-lg p-4 overflow-y-auto">
         {response && (
