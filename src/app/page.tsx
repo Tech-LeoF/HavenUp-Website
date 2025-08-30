@@ -7,23 +7,21 @@ import Pilares from './main/pilares/page';
 import Us from './main/aboutUs/page';
 import Footer from './footer/footer';
 
-
-export default function home(){
+export default function home() {
     return (
-    <>
-    <Show/>
-    <br /><br />
-    <Main/><br /><br /><br />
-    <Pilares/>
-    <br /><br />
-    <Us/><br /><br />
-    <Chat/>
-    <br /> <br />
-    <Footer/>
-    
-
-    
-    </>
-    )
-};
+        <>
+            <Show />
+            <br /><br />
+            <Main />
+            <br /><br /><br />
+            <Pilares />
+            <br /><br />
+            <Us />
+            <br /><br />
+            <Chat />
+            <br /><br />
+            <Footer />
+        </>
+    );
+}
 
