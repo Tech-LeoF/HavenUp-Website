@@ -36,25 +36,31 @@ export function NavBar({ role }: NavBarProps) {
       </div>
 
       <div className="flex space-x-6 text-white items-center" style={{ fontFamily: "'Poppins', sans-serif" }}>
-        <Link href="/" className="hover:drop-shadow-[0_0_4px_gray] text-[clamp(0.5rem,2vw,1rem)] transition duration-400 cursor-pointer">
+        <Link href="/" className="hover:drop-shadow-[0_0_4px_gray] text-[clamp(0.5rem,2vw,1rem)] transition duration-300 cursor-pointer">
           Home
         </Link>
-        <Link href="/main/aboutUs" className="hover:drop-shadow-[0_0_4px_gray] text-[clamp(0.5rem,2vw,1rem)] transition duration-400 cursor-pointer">
+        <Link href="/main/aboutUs" className="hover:drop-shadow-[0_0_4px_gray] text-[clamp(0.5rem,2vw,1rem)] transition duration-300 cursor-pointer">
           About Us
         </Link>
 
         {isSeller && (
           <>
-            <Link href="/contact" className="hover:drop-shadow-[0_0_4px_gray] text-[clamp(0.5rem,2vw,1rem)] transition duration-400 cursor-pointer">
+            <Link href="/contact" className="hover:drop-shadow-[0_0_4px_gray] text-[clamp(0.5rem,2vw,1rem)] transition duration-300 cursor-pointer">
               Selling
             </Link>
             <Link href="/publish">
-              <button className=" mt-0.5 leading-tight  text-[#073B3A] bg-[#F5F5DC] w-[clamp(3rem,8vw,15rem)] text-[clamp(0.7rem,1.2vw,1rem)] h-[clamp(2rem,6.1vh,8rem)] rounded-lg cursor-pointer hover:drop-shadow-[0_0_4px_gray] transition duration-400">
+              <button className=" mt-0.5 leading-tight  text-[#073B3A] bg-[#F5F5DC] w-[clamp(3rem,8vw,15rem)] text-[clamp(0.7rem,1.2vw,1rem)] h-[clamp(2rem,6.1vh,8rem)] rounded-lg cursor-pointer hover:drop-shadow-[0_0_4px_gray] transition duration-300">
                 Publish a house
               </button>
             </Link>
+            <Link href='/Mensajes'>
+            <button className=" mt-0.5 leading-tight  text-[#073B3A] bg-[#F5F5DC] w-[clamp(3rem,8vw,15rem)] text-[clamp(0.7rem,1.2vw,1rem)] h-[clamp(2rem,6.1vh,8rem)] rounded-lg cursor-pointer hover:drop-shadow-[0_0_4px_gray] transition duration-300">
+                Chat
+              </button>
+            </Link>
+             
             <Link href="/perfil">
-      <button className="text-[#073B3A] bg-[#F5F5DC] w-[clamp(3rem,8vw,15rem)] text-[clamp(0.7rem,1.2vw,1rem)] h-[clamp(2rem,6vh,3rem)] rounded-lg cursor-pointer hover:drop-shadow-[0_0_4px_gray] transition duration-400">
+      <button className="text-[#073B3A] bg-[#F5F5DC] w-[clamp(3rem,8vw,15rem)] text-[clamp(0.7rem,1.2vw,1rem)] h-[clamp(2rem,6vh,3rem)] rounded-lg cursor-pointer hover:drop-shadow-[0_0_4px_gray] transition duration-300">
         Settings
       </button>
     </Link>
@@ -64,12 +70,17 @@ export function NavBar({ role }: NavBarProps) {
         {isBuyer && (
           <>
           <Link href="/buy">
-            <button className="text-[#073B3A] bg-[#F5F5DC] w-[clamp(3rem,10vw,18rem)] text-[clamp(0.7rem,1.2vw,1rem)] h-[clamp(2rem,6vh,9rem)] truncate  rounded-lg cursor-pointer hover:drop-shadow-[0_0_4px_gray] transition duration-400">
+            <button className="text-[#073B3A] bg-[#F5F5DC] w-[clamp(3rem,10vw,18rem)] text-[clamp(0.7rem,1.2vw,1rem)] h-[clamp(2rem,6vh,9rem)] truncate  rounded-lg cursor-pointer hover:drop-shadow-[0_0_4px_gray] transition duration-300">
               Buy houses
             </button>
           </Link>
+          <Link href='/Mensajes'>
+            <button className=" mt-0.5 leading-tight  text-[#073B3A] bg-[#F5F5DC] w-[clamp(3rem,8vw,15rem)] text-[clamp(0.7rem,1.2vw,1rem)] h-[clamp(2rem,6.1vh,8rem)] rounded-lg cursor-pointer hover:drop-shadow-[0_0_4px_gray] transition duration-300">
+                Chat
+              </button>
+            </Link>
           <Link href="/perfil">
-      <button className="text-[#073B3A] bg-[#F5F5DC] w-[clamp(3rem,8vw,15rem)] text-[clamp(0.7rem,1.2vw,1rem)] h-[clamp(2rem,6vh,3rem)] rounded-lg cursor-pointer hover:drop-shadow-[0_0_4px_gray] transition duration-400">
+      <button className="text-[#073B3A] bg-[#F5F5DC] w-[clamp(3rem,8vw,15rem)] text-[clamp(0.7rem,1.2vw,1rem)] h-[clamp(2rem,6vh,3rem)] rounded-lg cursor-pointer hover:drop-shadow-[0_0_4px_gray] transition duration-300">
       Settigns
       </button>
     </Link>
