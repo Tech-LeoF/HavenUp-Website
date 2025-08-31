@@ -189,53 +189,49 @@ export default function Page() {
     return (
         <div className="bg-pink-100">
             {/* Hero Section */}
- 
-<div className="relative w-full h-screen flex items-center justify-center">
-  {/* 🎥 Video de fondo */}
-  <video
-    className="absolute inset-0 w-full h-full object-cover z-0"
-    autoPlay
-    loop
-    muted
-    playsInline
-  >
-    <source src="/video/casitas.mp4" type="video/mp4" />
-    Tu navegador no soporta el video.
-  </video>
+            <div className="relative w-full h-screen flex items-center justify-center">
+                <video
+                    className="absolute inset-0 w-full h-full object-cover z-0"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                >
+                    <source src="/video/casitas.mp4" type="video/mp4" />
+                    Tu navegador no soporta el video.
+                </video>
 
-  {/* Contenido encima del video */}
-  <div className="z-10 flex flex-col items-start w-full px-4 md:px-0 max-w-2xl  ">
-    <h1 className="text-4xl sm:text-5xl font-bold text-white mb-2">
-      Looking for the perfect place?
-    </h1>
-    <p className="text-xl sm:text-4xl text-white mb-2">
-      Find your dream home today
-    </p>
-    <div className="relative w-full mt-4">
-      <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-        <svg
-          className="w-5 h-5 text-gray-400"
-          fill="currentColor"
-          viewBox="0 0 20 20"
-        >
-          <path
-            fillRule="evenodd"
-            d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-            clipRule="evenodd"
-          ></path>
-        </svg>
-      </div>
-      <input
-        type="text"
-        className="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-white focus:ring-blue-500 focus:border-blue-500"
-        placeholder="Search houses"
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
-      />
-    </div>
-  </div>
-</div>
-
+                <div className="z-10 flex flex-col items-start w-full px-4 md:px-0 max-w-2xl">
+                    <h1 className="text-4xl sm:text-5xl font-bold text-white mb-2">
+                        Looking for the perfect place?
+                    </h1>
+                    <p className="text-xl sm:text-4xl text-white mb-2">
+                        Find your dream home today
+                    </p>
+                    <div className="relative w-full mt-4">
+                        <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                            <svg
+                                className="w-5 h-5 text-gray-400"
+                                fill="currentColor"
+                                viewBox="0 0 20 20"
+                            >
+                                <path
+                                    fillRule="evenodd"
+                                    d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                                    clipRule="evenodd"
+                                ></path>
+                            </svg>
+                        </div>
+                        <input
+                            type="text"
+                            className="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-white focus:ring-blue-500 focus:border-blue-500"
+                            placeholder="Search houses"
+                            value={search}
+                            onChange={(e) => setSearch(e.target.value)}
+                        />
+                    </div>
+                </div>
+            </div>
 
             {/* Properties Section */}
             <div className="bg-gray-100 py-10 px-4">
@@ -257,32 +253,44 @@ export default function Page() {
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                    {filteredHouses.map((house) => (
-                        <div
-                            key={house.id}
-                            className="bg-white rounded-lg shadow-md overflow-hidden"
-                        >
-                            <img
-                                src={house.img}
-                                alt={house.title}
-                                className="w-full h-48 object-cover"
-                            />
-                            <div className="p-4">
-                                <h3 className="text-lg font-semibold text-gray-900">
-                                    {house.title}
-                                </h3>
-                                <p className="text-gray-600 text-sm">{house.city}</p>
-                                <p className="text-xs text-gray-400">
-                                    {new Date(house.date).toLocaleDateString()}
-                                </p>
-                                <ul className="flex flex-wrap gap-4 mt-2 text-sm text-gray-700">
-                                    {house.details.map((detail, index) => (
-                                        <li key={index}>{detail}</li>
-                                    ))}
-                                </ul>
+                    {filteredHouses.map((house) => {
+                        // 📌 Extraer los m²
+                        const m2Detail = house.details[0];
+                        const m2 = parseInt(m2Detail);
+                        const price = m2 * 500; // 💰 Precio según los m²
+
+                        return (
+                            <div
+                                key={house.id}
+                                className="relative bg-white rounded-lg shadow-md overflow-hidden"
+                            >
+                                {/* Etiqueta del precio */}
+                                <span className="absolute top-2 right-2 bg-green-600 text-white text-sm font-semibold px-3 py-1 rounded-lg shadow-md">
+                                    ${price.toLocaleString()}
+                                </span>
+
+                                <img
+                                    src={house.img}
+                                    alt={house.title}
+                                    className="w-full h-48 object-cover"
+                                />
+                                <div className="p-4">
+                                    <h3 className="text-lg font-semibold text-gray-900">
+                                        {house.title}
+                                    </h3>
+                                    <p className="text-gray-600 text-sm">{house.city}</p>
+                                    <p className="text-xs text-gray-400">
+                                        {new Date(house.date).toLocaleDateString()}
+                                    </p>
+                                    <ul className="flex flex-wrap gap-4 mt-2 text-sm text-gray-700">
+                                        {house.details.map((detail, index) => (
+                                            <li key={index}>{detail}</li>
+                                        ))}
+                                    </ul>
+                                </div>
                             </div>
-                        </div>
-                    ))}
+                        );
+                    })}
                 </div>
             </div>
 
@@ -370,6 +378,7 @@ export default function Page() {
         </div>
     );
 }
+
 
 
 
