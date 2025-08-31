@@ -15,10 +15,10 @@ export default function Login() {
 
   const handleSignIn = async (e: React.FormEvent) => {
     e.preventDefault();
-    setErrorMsg(''); 
+    setErrorMsg('');
 
     if (!email || !password) {
-      setErrorMsg("Por favor, completa todos los campos");
+      setErrorMsg("Please complete all fields");
       return;
     }
 
@@ -32,16 +32,16 @@ export default function Login() {
         await setActive({ session: form.createdSessionId });
         router.push('/');
       } else {
-        console.log('Estado Login:', form);
+        console.log('Login state:', form);
       }
     } catch (err: any) {
       const clerkError = err?.errors?.[0]?.message;
       if (clerkError?.includes("Couldn't find your account")) {
-        setErrorMsg("Correo electrónico incorrecto");
+        setErrorMsg("Email not found");
       } else if (clerkError?.includes("Password is incorrect")) {
-        setErrorMsg("Contraseña incorrecta");
+        setErrorMsg("Incorrect password");
       } else {
-        setErrorMsg("Error al iniciar sesión");
+        setErrorMsg("Error while signing in");
       }
     }
   };
@@ -73,10 +73,10 @@ export default function Login() {
         {errorMsg && <p className="text-red-600 mt-2">{errorMsg}</p>}
       </form>
 
-      {/* Link a la página de recuperar contraseña */}
+      {/* Forgot password link handled by Clerk */}
       <p className="mt-2 text-sm">
-        <a href="/forgot-password" className="text-blue-500 underline">
-          ¿Olvidaste tu contraseña?
+        <a href="/ForgotPassword" className="text-blue-500 underline">
+          Forgot your password?
         </a>
       </p>
     </div>
