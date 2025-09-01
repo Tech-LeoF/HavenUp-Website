@@ -1,28 +1,19 @@
 'use client';
 
-import Show from './carrusel/page';
-import Main from './main/page';
-import Chat from './chatbot/chatbot';
+import Link from 'next/link';
 import Pilares from './main/pilares/page';
 import Us from './main/aboutUs/page';
+import Page from './paginaPrincipal/page';
+import HouseDetails from './house visualization/houseVisualization';
 import Footer from './footer/footer';
 
 
 export default function home(){
     return (
     <>
-    <Show/>
-    <br /><br />
-    <Main/><br /><br /><br />
-    <Pilares/>
-    <br /><br />
-    <Us/><br /><br />
-    <Chat/>
-    <br /> <br />
+    <Page/>
+    <Us/>
     <Footer/>
-    
-
-    
     </>
     )
 };

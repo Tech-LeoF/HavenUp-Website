@@ -27,7 +27,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Layout>
             {children}
           </Layout>
-          
         </ClerkProviderWrapper>
       </body>
     </html>

@@ -41,7 +41,6 @@ const sendMessage = async () => {
 
 return (
     <div style={{ fontFamily: "'Poppins', sans-serif" }} className="w-full h-200 bg-white text-black">
-      {/* Header */}
     <div className="flex justify-evenly">
         <div className="flex flex-col">
         <p className="text-4xl">HavenUp! Advisor</p>

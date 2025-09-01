@@ -7,7 +7,6 @@ export default function Us(){
     return(
         <main>
             <About/> <br/><br />
-            <Footer/>
         </main>
     )
 }

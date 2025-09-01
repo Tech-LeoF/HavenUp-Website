@@ -3,12 +3,12 @@ import { FaFacebookF, FaInstagram, FaYoutube, FaTiktok } from 'react-icons/fa'
 
 const Footer: React.FC = () => {
     return (
-    <footer className="bg-[#0c3a3a] text-[#a9b1b1] p-6 rounded-t-md">
+    <footer style={{ fontFamily: "'Poppins', sans-serif" }} className="bg-[#0c3a3a] text-[#a9b1b1] p-6 rounded-t-md">
         <div className="max-w-7xl mx-auto flex flex-wrap justify-between gap-8">
         {/* Logo and text */}
         <div className="max-w-xs">
             <Image
-            src="/ad9074cc-ef16-45a4-9240-f9c6f8649fdd.png"
+            src="/Imgs/Logo-BG.png"
             alt="HavenUp Real Estate Logo"
             width={140}
             height={50}

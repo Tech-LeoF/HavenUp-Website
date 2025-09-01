@@ -2,7 +2,7 @@
 
 export default function About() {
     return (
-    <div className="pr-8 pl-8"><br /><br />ñ
+    <div style={{ fontFamily: "'Poppins', sans-serif" }} className="pr-8 pl-8"><br /><br />ñ
     <div className="flex items-center w-full">
         <img
         src="/Imgs/familia.webp"
