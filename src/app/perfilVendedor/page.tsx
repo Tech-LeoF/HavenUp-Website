@@ -36,7 +36,7 @@ const Profile: React.FC = () => {
 
   return(
     <>
-    <div className="p-20">
+    <div style={{ fontFamily: "'Poppins', sans-serif" }} className="p-20">
       <h1 className="text-4xl font-bold mb-10 text-black">My profile</h1>
 
       <div className="flex items-center space-x-4 mb-10">

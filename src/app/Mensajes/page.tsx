@@ -83,7 +83,7 @@ const handleAudio = async () => {
 const emojis = ["😀", "😂", "😍", "😎", "😢", "😡", "👍", "🙏"];
 
 return (
-    <div className="bg-[#F5F5DC] min-h-screen flex flex-col sm:flex-row font-poppins">
+    <div style={{ fontFamily: "'Poppins', sans-serif" }} className="bg-[#F5F5DC] min-h-screen flex flex-col sm:flex-row font-poppins">
       {/* Sidebar */}
         <aside className="hidden sm:flex w-1/4 bg-white p-6 border-r border-gray-300 flex-col items-center text-center">
         <div className="w-24 h-24 rounded-full bg-[#073B3A] text-white flex items-center justify-center text-[clamp(1.5rem,4vw,3rem)] font-bold mb-4">

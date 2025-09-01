@@ -2,7 +2,7 @@
 
 export default function Pilar() {
   return (
-    <div className="flex flex-col gap-6 w-full px-[clamp(1rem,4vw,4rem)]">
+    <div style={{ fontFamily: "'Poppins', sans-serif" }} className="flex flex-col gap-6 w-full px-[clamp(1rem,4vw,4rem)]">
     
       <div className="flex justify-between items-center w-full">
         <button className="inline-flex bg-yellow-100 rounded-xl p-1.5">

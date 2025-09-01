@@ -40,11 +40,15 @@ export function NavBar({ role }: NavBarProps) {
   };
 
   return (
+<<<<<<< HEAD
     <nav className="bg-[#073B3A] flex items-center justify-between px-[clamp(1rem,5vw,5rem)] py-[clamp(0.5rem,2vh,2rem)]">
       {/* LOGO */}
+=======
+    <nav style={{ fontFamily: "'Poppins', sans-serif" }} className="bg-[#073B3A] flex items-center justify-between px-[clamp(1rem,5vw,5rem)] py-[clamp(0.5rem,2vh,2rem)]">
+>>>>>>> 476c2d93c34f3e048a19796499c306d528356d71
       <div>
         <img
-          className="cursor-pointer hover:drop-shadow-[0_0_4px_gray] transition duration-400 w-[clamp(2rem,5vw,5rem)] h-[clamp(3rem,7vw,5rem)]"
+          className="cursor-pointer hover:drop-shadow-[0_0_4px_gray] transition duration-400 w-[clamp(2rem,8vw,5rem)] h-[clamp(3rem,7vw,5rem)]"
           src="/Imgs/Logo-BG-rounded.png"
           alt="Logo"
         />

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import Image from "next/image";
 const houses = [
   {
@@ -177,3 +178,14 @@ export default function HousePage({ params }: { params: { id: string } }) {
     </div>
   );
 }
+=======
+'use client'
+
+import HouseDetails from "./houseVisualization";
+
+export default function HV() {
+return (
+    <HouseDetails />
+);
+}
+>>>>>>> 476c2d93c34f3e048a19796499c306d528356d71
