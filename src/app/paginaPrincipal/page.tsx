@@ -7,7 +7,7 @@ type House = {
     city: string;
     img: string;
     details: string[];
-    
+    date: string;
 };
 
 type Review = {
@@ -47,13 +47,17 @@ export default function Page() {
     const [newRating, setNewRating] = useState(5);
     const [isFormOpen, setIsFormOpen] = useState(false);
 
-    const houses: House[] = [
+    const [sortType, setSortType] = useState<"popular" | "newest">("popular");
+
+    // Casas populares
+    const popularHouses: House[] = [
         {
             id: 1,
             title: "House in colonia Mira Monte.",
             city: "Sonsonate",
             img: "/Imgs/casamiramonte.png",
             details: ["136m²", "3🛏", "2🛁", "1🚗"],
+            date: "2023-12-01",
         },
         {
             id: 2,
@@ -61,6 +65,7 @@ export default function Page() {
             city: "San Salvador",
             img: "/Imgs/casasanluis.png",
             details: ["111m²", "3🛏", "2🛁", "1🚗"],
+            date: "2024-02-15",
         },
         {
             id: 3,
@@ -68,6 +73,7 @@ export default function Page() {
             city: "San Salvador",
             img: "/Imgs/casaabad.png",
             details: ["100m²", "2🛏", "1🛁", "1🚗"],
+            date: "2024-04-10",
         },
         {
             id: 4,
@@ -75,6 +81,7 @@ export default function Page() {
             city: "San Salvador",
             img: "/Imgs/casaresidencial.png",
             details: ["136m²", "3🛏", "3🛁", "4🚗"],
+            date: "2024-06-01",
         },
         {
             id: 5,
@@ -82,6 +89,7 @@ export default function Page() {
             city: "San Juan Opico",
             img: "/Imgs/casaversalles.png",
             details: ["460m²", "6🛏", "3🛁", "4🚗"],
+            date: "2024-07-20",
         },
         {
             id: 6,
@@ -89,14 +97,75 @@ export default function Page() {
             city: "San Salvador",
             img: "/Imgs/casabenito.png",
             details: ["710m²", "5🛏", "4🛁", "3🚗"],
+            date: "2024-08-25",
         },
     ];
 
-    const filteredHouses = houses.filter(
-        (house) =>
-            house.title.toLowerCase().includes(search.toLowerCase()) ||
-            house.city.toLowerCase().includes(search.toLowerCase())
-    );
+    // Casas nuevas (Newest)
+    const newestHouses: House[] = [
+        {
+            id: 7,
+            title: "House in versailles city.",
+            city: "San Juan Opico",
+            img: "/Imgs/newest1.png",
+            details: ["77m²", "3🛏", "2🛁", "1🚗"],
+            date: "2025-08-28",
+        },
+        {
+            id: 8,
+            title: "House in versailles city.",
+            city: "San Juan Opico",
+            img: "/Imgs/newest2.png",
+            details: ["135m²", "4🛏", "3🛁", "2🚗"],
+            date: "2025-08-28",
+        },
+        {
+            id: 9,
+            title: "House in versailles city.",
+            city: "San Juan Opico",
+            img: "/Imgs/newest3.png",
+            details: ["163m²", "4🛏", "2🛁", "2🚗"],
+            date: "2025-08-28",
+        },
+        {
+            id: 10,
+            title: "House in versailles city.",
+            city: "San Juan Opico",
+            img: "/Imgs/newest4.png",
+            details: ["80m²", "3🛏", "3🛁", "3🚗"],
+            date: "2025-08-28",
+        },
+        {
+            id: 11,
+            title: "House in versailles city.",
+            city: "San Juan Opico",
+            img: "/Imgs/newest5.png",
+            details: ["100m²", "5🛏", "4🛁", "4🚗"],
+            date: "2025-08-28",
+        },
+        {
+            id: 12,
+            title: "House in Villa del Mar",
+            city: "Santa Tecla",
+            img: "/Imgs/newest6.png",
+            details: ["400m²", "4🛏", "3🛁", "2🚗"],
+            date: "2025-08-28",
+        },
+    ];
+
+    // Selecciona el array según el botón
+    const filteredHouses = (sortType === "popular" ? popularHouses : newestHouses)
+        .filter(
+            (house) =>
+                house.title.toLowerCase().includes(search.toLowerCase()) ||
+                house.city.toLowerCase().includes(search.toLowerCase())
+        )
+        .sort((a, b) => {
+            if (sortType === "newest") {
+                return new Date(b.date).getTime() - new Date(a.date).getTime();
+            }
+            return 0;
+        });
 
     const addReview = () => {
         if (!newName.trim() || !newComment.trim()) return;
@@ -121,10 +190,17 @@ export default function Page() {
         <div className="bg-pink-100">
             {/* Hero Section */}
             <div className="relative w-full h-screen flex items-center justify-center">
-                <div
-                    className="absolute inset-0 z-0 bg-contain bg-center"
-                    style={{ backgroundImage: "url('/Imgs/casa1.png')" }}
-                ></div>
+                <video
+                    className="absolute inset-0 w-full h-full object-cover z-0"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                >
+                    <source src="/video/casitas.mp4" type="video/mp4" />
+                    Tu navegador no soporta el video.
+                </video>
+
                 <div className="z-10 flex flex-col items-start w-full px-4 md:px-0 max-w-2xl">
                     <h1 className="text-4xl sm:text-5xl font-bold text-white mb-2">
                         Looking for the perfect place?
@@ -160,54 +236,61 @@ export default function Page() {
             {/* Properties Section */}
             <div className="bg-gray-100 py-10 px-4">
                 <div className="max-w-6xl mx-auto px-4 mb-6 flex items-center space-x-2">
-                    <button className="bg-white hover:bg-gray-100 text-gray-800 font-medium py-2 px-4 rounded-lg border border-gray-300">
+                    <button
+                        onClick={() => setSortType("popular")}
+                        className={`${sortType === "popular" ? "bg-gray-300" : "bg-white"
+                            } hover:bg-gray-100 text-gray-800 font-medium py-2 px-4 rounded-lg border border-gray-300`}
+                    >
                         Popular
                     </button>
-                    <button className="bg-white hover:bg-gray-100 text-gray-800 font-medium py-2 px-4 rounded-lg border border-gray-300">
+                    <button
+                        onClick={() => setSortType("newest")}
+                        className={`${sortType === "newest" ? "bg-gray-300" : "bg-white"
+                            } hover:bg-gray-100 text-gray-800 font-medium py-2 px-4 rounded-lg border border-gray-300`}
+                    >
                         Newest
-                    </button>
-                    <button className="bg-white hover:bg-gray-100 p-2 rounded-lg border border-gray-300">
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            strokeWidth={1.5}
-                            stroke="currentColor"
-                            className="w-6 h-6 text-gray-600"
-                        >
-                            <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zm0 6h9.75M10.5 12a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zm0 6h9.75M10.5 18a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"
-                            />
-                        </svg>
                     </button>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                    {filteredHouses.map((house) => (
-                        <div
-                            key={house.id}
-                            className="bg-white rounded-lg shadow-md overflow-hidden"
-                        >
-                            <img
-                                src={house.img}
-                                alt={house.title}
-                                className="w-full h-48 object-cover"
-                            />
-                            <div className="p-4">
-                                <h3 className="text-lg font-semibold text-gray-900">
-                                    {house.title}
-                                </h3>
-                                <p className="text-gray-600 text-sm">{house.city}</p>
-                                <ul className="flex flex-wrap gap-4 mt-2 text-sm text-gray-700">
-                                    {house.details.map((detail, index) => (
-                                        <li key={index}>{detail}</li>
-                                    ))}
-                                </ul>
+                    {filteredHouses.map((house) => {
+                        // 📌 Extraer los m²
+                        const m2Detail = house.details[0];
+                        const m2 = parseInt(m2Detail);
+                        const price = m2 * 500; // 💰 Precio según los m²
+
+                        return (
+                            <div
+                                key={house.id}
+                                className="relative bg-white rounded-lg shadow-md overflow-hidden"
+                            >
+                                {/* Etiqueta del precio */}
+                                <span className="absolute top-2 right-2 bg-green-600 text-white text-sm font-semibold px-3 py-1 rounded-lg shadow-md">
+                                    ${price.toLocaleString()}
+                                </span>
+
+                                <img
+                                    src={house.img}
+                                    alt={house.title}
+                                    className="w-full h-48 object-cover"
+                                />
+                                <div className="p-4">
+                                    <h3 className="text-lg font-semibold text-gray-900">
+                                        {house.title}
+                                    </h3>
+                                    <p className="text-gray-600 text-sm">{house.city}</p>
+                                    <p className="text-xs text-gray-400">
+                                        {new Date(house.date).toLocaleDateString()}
+                                    </p>
+                                    <ul className="flex flex-wrap gap-4 mt-2 text-sm text-gray-700">
+                                        {house.details.map((detail, index) => (
+                                            <li key={index}>{detail}</li>
+                                        ))}
+                                    </ul>
+                                </div>
                             </div>
-                        </div>
-                    ))}
+                        );
+                    })}
                 </div>
             </div>
 
@@ -222,7 +305,6 @@ export default function Page() {
                         Share your opinion and help others find their home.
                     </h2>
 
-                    {/* Comentario con formulario desplegable */}
                     <div className="flex flex-col max-w-xl mx-auto mt-4 bg-black-40">
                         <input
                             type="text"
@@ -286,7 +368,9 @@ export default function Page() {
                                 <span className="text-gray-500 text-sm">{review.date}</span>
                             </div>
                         </div>
-                        <p className="text-yellow-500 mt-2">{'★'.repeat(review.rating)}</p>
+                        <p className="text-yellow-500 mt-2">
+                            {"★".repeat(review.rating)}
+                        </p>
                         <p className="text-gray-700 mt-1">{review.comment}</p>
                     </div>
                 ))}
@@ -294,6 +378,9 @@ export default function Page() {
         </div>
     );
 }
+
+
+
 
 
 
