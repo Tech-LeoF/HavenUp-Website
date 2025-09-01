@@ -3,6 +3,7 @@ import './globals.css';
 import Layout from './navBars/page';
 import { Geist, Geist_Mono } from 'next/font/google';
 import ClerkProviderWrapper from './providers/ClerkProviderWrapper';
+import Pie from './footer/page';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -17,6 +18,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
       <head>
+         <link rel="icon" href="/Imgs/logo-rounded.png" key="favicon" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+      />
         <link
           href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
           rel="stylesheet"
@@ -27,6 +33,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Layout>
             {children}
           </Layout>
+        <br /><br />
+        <Pie/>
           
         </ClerkProviderWrapper>
       </body>

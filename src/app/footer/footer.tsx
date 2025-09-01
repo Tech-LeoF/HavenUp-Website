@@ -8,11 +8,11 @@ const Footer: React.FC = () => {
         {/* Logo and text */}
         <div className="max-w-xs">
             <Image
-            src="/ad9074cc-ef16-45a4-9240-f9c6f8649fdd.png"
+            src="/Imgs/logo.png"
             alt="HavenUp Real Estate Logo"
             width={140}
             height={50}
-            className="mb-4"
+            className="sm:w-12 sm:h-12 md:w-20 md:h-20 lg:w-28 lg:h-28 rounded-full object-cover mb-4"
             />
             <p className="text-xs leading-relaxed">
             Querido usuario acepta las políticas de HavenUp al buscar una experiencia inmobiliaria más clara, segura y tecnológica. Reconoce la
