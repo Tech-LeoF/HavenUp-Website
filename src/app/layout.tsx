@@ -33,12 +33,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Layout>
             {children}
           </Layout>
-<<<<<<< HEAD
         <br /><br />
         <Pie/>
           
-=======
->>>>>>> 476c2d93c34f3e048a19796499c306d528356d71
         </ClerkProviderWrapper>
       </body>
     </html>
