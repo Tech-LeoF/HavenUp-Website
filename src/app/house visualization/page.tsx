@@ -1,6 +1,4 @@
 import Image from "next/image";
-
-// 🔹 Ejemplo de casas (esto en un caso real puede venir de una API o DB)
 const houses = [
   {
     id: "1",
