@@ -49,40 +49,7 @@ export function NavBar({ role }: NavBarProps) {
         />
       </div>
 
-      {/* 🔎 FILTRO DE BÚSQUEDA EN NAVBAR */}
-      <form 
-        onSubmit={handleSearch} 
-        className="hidden md:flex items-center gap-2 bg-white rounded-xl px-3 py-1"
-      >
-        <input
-          type="text"
-          placeholder="Ubicación"
-          value={ubicacion}
-          onChange={(e) => setUbicacion(e.target.value)}
-          className="p-1 text-sm border rounded-md outline-none"
-        />
-        <input
-          type="number"
-          placeholder="Mín $"
-          value={precioMin}
-          onChange={(e) => setPrecioMin(e.target.value ? Number(e.target.value) : "")}
-          className="p-1 text-sm border rounded-md w-20 outline-none"
-        />
-        <input
-          type="number"
-          placeholder="Máx $"
-          value={precioMax}
-          onChange={(e) => setPrecioMax(e.target.value ? Number(e.target.value) : "")}
-          className="p-1 text-sm border rounded-md w-20 outline-none"
-        />
-        <button 
-          type="submit" 
-          className="bg-[#073B3A] text-white px-3 py-1 rounded-md text-sm hover:bg-[#0a4c4b] transition"
-        >
-          Buscar
-        </button>
-      </form>
-
+     
       {/* LINKS / BOTONES */}
       <div className="flex space-x-6 text-white items-center" style={{ fontFamily: "'Poppins', sans-serif" }}>
         <Link href="/" className="hover:drop-shadow-[0_0_4px_gray] text-[clamp(0.5rem,2vw,1rem)] transition duration-300 cursor-pointer">

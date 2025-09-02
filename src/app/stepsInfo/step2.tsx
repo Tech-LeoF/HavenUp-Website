@@ -1,62 +1,57 @@
-'use client';
+"use client";
 
-export default function Step2(){
-    return(
-    <figure style={{ fontFamily: "'Poppins', sans-serif" }} className="w-full h-250 flex justify-center items-center bg-white text-black">
-        <div className="w-150 h-200 rounded-lg space-y-10">
-            <div>
-                <p className="text-3xl font-bold">
-                    Step 2 - Upload Photos and Videos
-                </p>
-            </div>
+interface Step2Props {
+  formData: any;
+  onChange?: (field: string, value: any) => void;
+  onNext: () => void;
+  onBack: () => void;
+}
+
+export default function Step2({ formData, onChange, onNext, onBack }: Step2Props) {
+  const handleFileChange = (field: string, files: FileList | null) => {
+    if (!files) return;
+    onChange && onChange(field, Array.from(files));
+  };
+
+  return (
+    <figure style={{ fontFamily: "'Poppins', sans-serif" }} className="bg-white w-full h-260 flex justify-center items-center">
+      <div className="absolute -mt-233 -ml-19">
+        <p className="text-black text-3xl font-bold">Step 2 - Media Upload</p>
+      </div>
+      <div className="bg-white-100 w-140 h-200 rounded-lg">
+        <div className="text-black flex justify-center items-center w-120">
+          <div className="space-y-10">
+            {/* Fotos */}
             <div className="space-y-2">
-                <p className="text-lg font-bold">
-                    Upload Photos
-                </p>
-                <p className="text-sm">
-                    Upload at least 3 photos of your property. High quality photos will atract more potential buyers
-                </p>
+              <p>Photos</p>
+              <input
+                type="file"
+                multiple
+                accept="image/*"
+                onChange={(e) => handleFileChange("fotos", e.target.files)}
+                className="w-90"
+              />
             </div>
-            <div className="flex justify-center">
-                <div className="border-1 border-[#FFD166] w-150 h-45 rounded-lg flex flex-col justify-center items-center space-y-2 bg-[#F5F5DC]">
-                    <div>
-                        <p className="font-bold">Drag and drop photos here, or</p>
-                    </div>
-                    <div>
-                        <p>Browse Files</p>
-                    </div>
-                    <div>
-                        <input className="border-1 border-black rounded-lg w-50" type="file"/>
-                    </div>
-                </div>
-            </div>
+
+            {/* Videos */}
             <div className="space-y-2">
-                <p className="text-lg font-bold">
-                    Upload Video (Optional)
-                </p>
-                <p className="text-sm">
-                    Add a video tour of your property to give potential buyers a more immersive experience
-                </p>
+              <p>Videos</p>
+              <input
+                type="file"
+                multiple
+                accept="video/*"
+                onChange={(e) => handleFileChange("videos", e.target.files)}
+                className="w-90"
+              />
             </div>
-            <div className="flex justify-center">
-                <div className="border-1 border-[#FFD166] w-150 h-45 rounded-lg flex flex-col justify-center items-center space-y-2 bg-[#F5F5DC]">
-                    <div>
-                        <p className="font-bold">Drag and drop Video here, or</p>
-                    </div>
-                    <div>
-                        <p>Browse Files</p>
-                    </div>
-                    <div>
-                        <input className="border-1 border-black rounded-lg w-50" type="file"/>
-                    </div>
-                </div>
+
+            <div className="flex space-x-4">
+              <button onClick={onBack} className="mt-4 w-40 h-10 bg-gray-300 rounded-lg">Back</button>
+              <button onClick={onNext} className="mt-4 w-40 h-10 bg-[#FFD166] rounded-lg">Next</button>
             </div>
-            <div className="flex justify-start space-x-2 text-gray-600 ">
-                <input className="w-8" type="checkbox"/>
-                <p>Request 3D View</p>
-                
-            </div>
+          </div>
         </div>
+      </div>
     </figure>
-    );
-};
+  );
+}
