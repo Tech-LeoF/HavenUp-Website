@@ -120,7 +120,7 @@ return (
             {/* Audio */}
             <button type="button" onClick={handleAudio} className="text-2xl">{mediaRecorder ? "⏹️" : "🎙️"}</button>
 
-            <input type="text" placeholder="Type your message here..." className="flex-grow p-3 text-lg rounded-2xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#629584] placeholder-gray-400" value={input} onChange={e=>setInput(e.target.value)} />
+            <input type="text" placeholder="Type your message here..." className="flex-grow p-3 text-lg rounded-2xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#629584] placeholder-gray-400 text-[#073B3A]" value={input} onChange={e=>setInput(e.target.value)} />
 
             <button type="submit" className="bg-[#073B3A] text-white px-6 py-3 rounded-2xl hover:bg-[#09524F] transition">Send</button>
         </form>

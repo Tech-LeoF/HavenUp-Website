@@ -115,11 +115,13 @@ const HouseDetails: React.FC = () => {
         </div>
 
         {/* Explore Button */}
-        <div className="mt-6 flex justify-center">
-            <button className="bg-green-500 text-white px-6 py-2 rounded-lg font-semibold hover:bg-green-600">
-                Explore in 3D
-            </button>
-        </div>
+        <Link href={'/3DShowcase'}>
+            <div className="mt-6 flex justify-center">
+                <button className="bg-green-500 text-white px-6 py-2 rounded-lg font-semibold hover:bg-green-600">
+                    Explore in 3D
+                </button>
+            </div>
+        </Link>
 
         {/* Location */}
         <div className="mt-10 px-10">
@@ -147,9 +149,11 @@ const HouseDetails: React.FC = () => {
         {/* Contacts */}
         <div className="mt-10 px-10 mb-10">
             <h3 className="text-lg font-semibold mb-3">Contact</h3>
-            <button className="w-full bg-gray-700 text-white py-3 rounded-lg font-semibold hover:bg-gray-800">
-                Chat
-            </button>
+            <Link href={'/chat/buyer'}>
+                <button className="w-full bg-gray-700 text-white py-3 rounded-lg font-semibold hover:bg-gray-800">
+                    Chat
+                </button>
+            </Link>
         </div>
     </div>
     );

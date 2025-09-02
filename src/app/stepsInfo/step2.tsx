@@ -56,12 +56,6 @@ export default function Step2(){
                 <p>Request 3D View</p>
                 
             </div>
-            <div>
-                <div className="flex justify-between">
-                    <button className="w-20 h-10 bg-[#FFD166] rounded-lg">Back</button>
-                    <button className="w-20 h-10 bg-[#FFD166] rounded-lg">Next</button>
-                </div>
-            </div>
         </div>
     </figure>
     );

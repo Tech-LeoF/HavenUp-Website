@@ -40,10 +40,10 @@ const sendMessage = async () => {
 };
 
 return (
-    <div style={{ fontFamily: "'Poppins', sans-serif" }} className="w-full h-200 bg-white text-black">
+    <div style={{ fontFamily: "'Poppins', sans-serif" }} className="w-full h-200 bg-white text-black mt-15">
     <div className="flex justify-evenly">
         <div className="flex flex-col">
-        <p className="text-4xl">HavenUp! Advisor</p>
+        <p className="text-5xl">HavenUp! Advisor</p>
         <p className="text-sm">Get personalized real estate advice from our AI assistant.</p>
         </div>
         <div>

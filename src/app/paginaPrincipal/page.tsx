@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import HV from "../house visualization/page";
 
 type House = {
   id: number;
@@ -192,7 +191,7 @@ export default function Page() {
               key={house.id}
               className="bg-white rounded-lg shadow-md overflow-hidden"
             >
-              <Link href={`/HV`}>
+              <Link href={`/houseVisualization`}>
                 <img
                   src={house.img}
                   alt={house.title}

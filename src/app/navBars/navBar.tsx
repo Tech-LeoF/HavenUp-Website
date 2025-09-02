@@ -97,7 +97,7 @@ export function NavBar({ role }: NavBarProps) {
             <Link href="/contact" className="hover:drop-shadow-[0_0_4px_gray] text-[clamp(0.5rem,2vw,1rem)] transition duration-300 cursor-pointer">
               Selling
             </Link>
-            <Link href="/publish">
+            <Link href="/stepsInfo">
               <button className=" mt-0.5 leading-tight  text-[#073B3A] bg-[#F5F5DC] w-[clamp(3rem,8vw,15rem)] text-[clamp(0.7rem,1.2vw,1rem)] h-[clamp(2rem,6.1vh,8rem)] rounded-lg cursor-pointer hover:drop-shadow-[0_0_4px_gray] transition duration-300">
                 Publish a house
               </button>
