@@ -119,13 +119,11 @@ export default function Page() {
   };
 
   return (
-    <div style={{ fontFamily: "'Poppins', sans-serif" }} className="bg-pink-100">
+    <div style={{ fontFamily: "'Poppins', sans-serif" }} className="bg-white">
       {/* Hero Section */}
       <div className="relative w-full h-screen flex items-center justify-center">
-        <div
-          className="absolute inset-0 z-0 bg-contain bg-center"
-          style={{ backgroundImage: "url('/Imgs/casa1.png')" }}
-        ></div>
+        <video className="absolute inset-0 w-full h-full object-cover z-0" src="/video/casitas2.mp4" autoPlay muted loop playsInline>
+        </video>
         <div className="z-10 flex flex-col items-start w-full px-4 md:px-0 max-w-2xl">
           <h1 className="text-4xl sm:text-5xl font-bold text-white mb-2">
             Looking for the perfect place?

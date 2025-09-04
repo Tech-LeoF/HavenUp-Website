@@ -43,7 +43,7 @@ export function NavBar({ role }: NavBarProps) {
     <nav style={{ fontFamily: "'Poppins', sans-serif" }} className="bg-[#073B3A] flex items-center justify-between px-[clamp(1rem,5vw,5rem)] py-[clamp(0.5rem,2vh,2rem)]">
       <div>
         <img
-          className="cursor-pointer hover:drop-shadow-[0_0_4px_gray] transition duration-400 w-[clamp(2rem,8vw,5rem)] h-[clamp(3rem,7vw,5rem)]"
+          className="cursor-pointer hover:drop-shadow-[0_0_4px_gray] transition duration-400 w-[clamp(3rem,7vw,6rem)] h-[clamp(6rem,6vw,6rem)]"
           src="/Imgs/Logo-BG-rounded.png"
           alt="Logo"
         />
@@ -61,12 +61,9 @@ export function NavBar({ role }: NavBarProps) {
 
         {isSeller && (
           <>
-            <Link href="/contact" className="hover:drop-shadow-[0_0_4px_gray] text-[clamp(0.5rem,2vw,1rem)] transition duration-300 cursor-pointer">
-              Selling
-            </Link>
             <Link href="/stepsInfo">
-              <button className=" mt-0.5 leading-tight  text-[#073B3A] bg-[#F5F5DC] w-[clamp(3rem,8vw,15rem)] text-[clamp(0.7rem,1.2vw,1rem)] h-[clamp(2rem,6.1vh,8rem)] rounded-lg cursor-pointer hover:drop-shadow-[0_0_4px_gray] transition duration-300">
-                Publish a house
+              <button className=" mt-0.5 leading-tight  text-[#073B3A] bg-[#F5F5DC] w-[clamp(5rem,8vw,20rem)] text-[clamp(0.7rem,1.2vw,1rem)] h-[clamp(2rem,6.1vh,8rem)] rounded-lg cursor-pointer hover:drop-shadow-[0_0_4px_gray] transition duration-300">
+                Publish
               </button>
             </Link>
             <Link href='/Mensajes'>
