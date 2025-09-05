@@ -11,7 +11,7 @@ const PricingPlans = () => {
         
           <div className="h-100 w-90 rounded-xl p-6 bg-white shadow-xl border border-transparent border-3 hover:border-[#073B3A] transform hover:scale-105 transition-all duration-300  flex flex-col justify-between">
             <div>
-              <h3 className="flex justify-start items center p-2 text-lg font-semibold text-gray-900">Basic</h3>
+              <h3 className="flex justify-start items center p-2 text-lg font-semibold text-gray-900">Basic plan</h3>
               <p className="flex flex-col items-start text-3xl font-bold text-blue-900 mt-2">Free</p>
               <ul className="mt-4 space-y-2 text-left text-gray-600">
                 <li>-list your property on the platform</li>
@@ -27,7 +27,7 @@ const PricingPlans = () => {
 
           <div className="h-100 w-90 h-full rounded-xl p-6 bg-white shadow-xl border border-transparent border-3 hover:border-[#073B3A] transform hover:scale-105 transition-all duration-300 flex flex-col justify-between">
             <div>
-              <h3 className="flex justify-start items center p-2 text-lg font-semibold text-gray-900">Premium</h3>
+              <h3 className="flex justify-start items center p-2 text-lg font-semibold text-gray-900">Premium plan</h3>
               <p className="flex justify-start items center text-3xl font-bold text-blue-900 mt-2 transition-colors duration-300 ">$9<span className="text-base font-normal">.99/month</span></p>
               <ul className="mt-4 space-y-2 text-left text-gray-600">
                 <li>-Property in featured spots</li>
@@ -43,7 +43,7 @@ const PricingPlans = () => {
 
           <div className="h-100 w-90 h-full rounded-xl p-6 bg-white shadow-xl border border-transparent border-3 hover:border-[#073B3A] transform hover:scale-105 transition-all duration-300 flex flex-col justify-between">
             <div>
-              <h3 className="flex justify-start items center p-2 text-lg font-semibold text-gray-900">Pro</h3>
+              <h3 className="flex justify-start items center p-2 text-lg font-semibold text-gray-900">Premier plan</h3>
               <p className="flex justify-start items-start text-3xl font-bold text-blue-900 mt-2 ">$14<span className="text-base font-normal">.99/month</span></p>
               <ul className="mt-4 space-y-2 text-left text-gray-600">
                 <li>-Everything in premium</li>
