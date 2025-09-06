@@ -4,10 +4,10 @@ import Link from "next/link";
 const HouseDetails: React.FC = () => {
     return (
         <div className="bg-gray-50 text-gray-800 min-h-screen">
-        {/* Header */}
+        
         <h2 className="text-center text-2xl font-semibold py-5">House Details</h2>
 
-        {/* Profile */}
+        
         <div className="flex items-center gap-3 px-10">
             <div className="w-12 h-12 bg-gray-200 rounded-full"></div>
             <div>
@@ -16,10 +16,10 @@ const HouseDetails: React.FC = () => {
             </div>
         </div>
 
-        {/* Title */}
+        
         <p className="px-10 mt-3 text-gray-600">Spacious house in San Salvador</p>
 
-        {/* Image Full Width */}
+        
         <div className="relative mt-5">
             <img
             src="https://images.unsplash.com/photo-1568605114967-8130f3a36994"
@@ -27,30 +27,30 @@ const HouseDetails: React.FC = () => {
             className="w-full h-[500px] object-cover"
         />
 
-            {/* Label */}
+            
             <span className="absolute top-5 left-5 bg-white text-xs px-3 py-1 rounded shadow">
                 Main entrance
             </span>
 
-            {/* Left arrow */}
+            
             <button className="absolute top-1/2 left-5 transform -translate-y-1/2 bg-white rounded-full shadow p-3">
                 ◀
             </button>
 
-            {/* Right arrow */}
+            
             <button className="absolute top-1/2 right-5 transform -translate-y-1/2 bg-white rounded-full shadow p-3">
                 ▶
             </button>
             </div>
 
-        {/* Buy button */}
+        
         <div className="mt-6 flex justify-end px-10">
             <button className="bg-yellow-400 text-white px-6 py-2 rounded-lg font-semibold hover:bg-yellow-500">
             Buy
             </button>
         </div>
 
-        {/* Info Section */}
+        
         <div className="mt-6 grid grid-cols-2 gap-6 px-10 text-gray-700">
             <div>
                 <p className="font-semibold">Price</p>
@@ -114,16 +114,16 @@ const HouseDetails: React.FC = () => {
             </div>
         </div>
 
-        {/* Explore Button */}
+        
         <Link href={'/3DShowcase'}>
             <div className="mt-6 flex justify-center">
-                <button className="bg-green-500 text-white px-6 py-2 rounded-lg font-semibold hover:bg-green-600">
+                <button className="bg-[#073B3A] text-white px-6 py-2 rounded-lg font-semibold hover:bg-green-600">
                     Explore in 3D
                 </button>
             </div>
         </Link>
 
-        {/* Location */}
+        
         <div className="mt-10 px-10">
             <p className="font-semibold text-lg">
                 Location – <span className="text-gray-600">Downtown San Salvador</span>
@@ -135,7 +135,7 @@ const HouseDetails: React.FC = () => {
             />
         </div>
 
-        {/* Description */}
+        
         <div className="mt-10 px-10">
             <h3 className="text-lg font-semibold mb-2">General Description</h3>
             <p className="text-gray-700">
@@ -146,11 +146,11 @@ const HouseDetails: React.FC = () => {
             </p>
         </div>
 
-        {/* Contacts */}
+        
         <div className="mt-10 px-10 mb-10">
             <h3 className="text-lg font-semibold mb-3">Contact</h3>
             <Link href={'/chat/buyer'}>
-                <button className="w-full bg-gray-700 text-white py-3 rounded-lg font-semibold hover:bg-gray-800">
+                <button className="w-full bg-[#073B3A] text-white py-3 rounded-lg font-semibold hover:bg-gray-800">
                     Chat
                 </button>
             </Link>

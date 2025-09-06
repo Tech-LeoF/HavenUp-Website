@@ -257,7 +257,7 @@ export default function Page() {
             )}
 
             <button
-              className="bg-green-600 hover:bg-green-700 text-white font-medium px-6 py-3 rounded-full mt-2 self-end"
+              className="bg-[#629584] hover:bg-[#073B3A] text-white font-medium px-6 py-3 rounded-full mt-2 self-end"
               onClick={addReview}
             >
               Send
