@@ -79,7 +79,7 @@ export function NavBar({ role }: NavBarProps) {
                 <Link
                   href="/stepsInfo"
                   className={`text-white transition duration-300 cursor-pointer text-[clamp(0.5rem,2vw,1rem)] hover:drop-shadow-[0_0_4px_gray] ${
-                  pathname === "/buy" ? "border-b-2 border-[#629584]" : ""
+                  pathname === "/stepsInfo" ? "border-b-2 border-[#629584]" : ""
                   }`}>
                     publish
                 </Link>
@@ -100,7 +100,7 @@ export function NavBar({ role }: NavBarProps) {
                 <Link
                   href="/perfil"
                   className={`text-white transition duration-300 cursor-pointer text-[clamp(0.5rem,2vw,1rem)] hover:drop-shadow-[0_0_4px_gray] ${
-                  pathname === "/perfil" ? "border-b-2 border-blue-400" : ""
+                  pathname === "/premium" ? "border-b-2 border-blue-400" : ""
                   }`}>
                     premium plans
                 </Link>
