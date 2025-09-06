@@ -44,10 +44,10 @@ export function NavBar({ role }: NavBarProps) {
 
 
   return (
-    <nav style={{ fontFamily: "'Poppins', sans-serif" }} className="bg-[#073B3A] flex items-center justify-between px-[clamp(1rem,5vw,5rem)] py-[clamp(0.5rem,2vh,2rem)]">
+    <nav style={{ fontFamily: "'Poppins', sans-serif" }} className="bg-[#073B3A] flex items-center justify-between px-[clamp(1rem,5vw,5rem)] py-0.1 ">
       <div>
         <img
-          className="cursor-pointer drop-shadow-[0_0_4px_gray] transition duration-400 w-[clamp(3rem,7vw,6rem)] h-[clamp(6rem,6vw,6rem)]"
+          className="cursor-pointer drop-shadow-[0_0_4px_gray] transition duration-400 w-[clamp(4rem,7vw,7rem)] h-[clamp(6rem,7vw,7rem)]"
           src="/Imgs/Logo-BG-rounded.png"
           alt="Logo"
         />
@@ -81,7 +81,7 @@ export function NavBar({ role }: NavBarProps) {
                   className={`text-white transition duration-300 cursor-pointer text-[clamp(0.5rem,2vw,1rem)] hover:drop-shadow-[0_0_4px_gray] ${
                   pathname === "/stepsInfo" ? "border-b-2 border-[#629584]" : ""
                   }`}>
-                    publish
+                    Publish
                 </Link>
                 <Link
                   href="/Mensajes"
@@ -102,7 +102,7 @@ export function NavBar({ role }: NavBarProps) {
                   className={`text-white transition duration-300 cursor-pointer text-[clamp(0.5rem,2vw,1rem)] hover:drop-shadow-[0_0_4px_gray] ${
                   pathname === "/premium" ? "border-b-2 border-blue-400" : ""
                   }`}>
-                    premium plans
+                    Premium plans
                 </Link>
               </div>
           </>
