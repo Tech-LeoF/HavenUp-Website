@@ -47,35 +47,56 @@ export default function Login() {
   };
 
   return (
-    <div style={{ fontFamily: "'Poppins', sans-serif" }} className="max-w-md w-full p-6 bg-white rounded-xl shadow space-y-6 mt-10">
-      <form onSubmit={handleSignIn} className="custom-login-form">
-        <label className="text-black">Email</label><br />
-        <input
-          type="email"
-          className="w-full border p-2 rounded mt-2 bg-yellow-50 placeholder-gray-400 text-black mb-2"
-          placeholder="Enter your email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-        <label className="text-black">Password</label><br />
-        <input
-          type="password"
-          className="w-full border p-2 rounded mt-2 bg-yellow-50 placeholder-gray-400 text-black"
-          placeholder="Enter your password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-        <button className="bg-yellow-400 text-black p-2 mt-4 w-full rounded" type="submit">
+    <div
+      style={{ fontFamily: "'Poppins', sans-serif" }}
+      className="max-w-md w-full p-8 rounded-2xl shadow-2xl mt-20 bg-white/70 backdrop-blur-md border border-[#629584] animate-fade-in"
+    >
+      <h2 className="text-3xl font-bold text-center text-[#073B3A] drop-shadow-sm">Welcome Back</h2>
+      <p className="text-center text-[#629584] text-sm mt-2">
+        We're glad you're here — let's get you signed in.
+      </p>
+
+      <form onSubmit={handleSignIn} className="space-y-6 mt-6">
+        <div>
+          <label className="text-[#073B3A] font-semibold">Email</label>
+          <input
+            type="email"
+            className="w-full border border-[#629584] p-3 rounded-xl mt-2 bg-yellow-50 placeholder-[#629584] text-[#073B3A] focus:outline-none focus:ring-2 focus:ring-[#629584] transition-all duration-200 shadow-sm"
+            placeholder="Enter your email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+        </div>
+
+        <div>
+          <label className="text-[#073B3A] font-semibold">Password</label>
+          <input
+            type="password"
+            className="w-full border border-[#629584] p-3 rounded-xl mt-2 bg-yellow-50 placeholder-[#629584] text-[#073B3A] focus:outline-none focus:ring-2 focus:ring-[#629584] transition-all duration-200 shadow-sm"
+            placeholder="Enter your password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+        </div>
+
+        <button
+          className="bg-gradient-to-r from-yellow-300 to-yellow-400 hover:from-yellow-400 hover:to-yellow-500 text-[#073B3A] font-bold p-3 mt-4 w-full rounded-xl transition-all duration-300 shadow-md hover:shadow-lg"
+          type="submit"
+        >
           Login
         </button>
-        {errorMsg && <p className="text-red-600 mt-2">{errorMsg}</p>}
+
+        {errorMsg && (
+          <p className="text-red-600 mt-2 text-center font-medium animate-pulse">
+            {errorMsg}
+          </p>
+        )}
       </form>
 
-      {/* Forgot password link handled by Clerk */}
-      <p className="mt-2 text-sm">
-        <a href="/ForgotPassword" className="text-blue-500 underline">
+      <p className="mt-4 text-sm text-center">
+        <a href="/ForgotPassword" className="text-[#073B3A] underline hover:text-[#629584] transition-all duration-200">
           Forgot your password?
         </a>
       </p>
