@@ -100,7 +100,7 @@ export function NavBar({ role }: NavBarProps) {
                 <Link
                   href="/PremiumPlan"
                   className={`text-white transition duration-300 cursor-pointer text-[clamp(0.5rem,2vw,1rem)] hover:drop-shadow-[0_0_4px_gray] ${
-                  pathname === "/premium" ? "border-b-2 border-blue-400" : ""
+                  pathname === "/PremiumPlan" ? "border-b-2 border-blue-400" : ""
                   }`}>
                     Premium plans
                 </Link>

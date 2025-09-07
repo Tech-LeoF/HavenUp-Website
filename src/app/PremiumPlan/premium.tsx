@@ -4,7 +4,7 @@ const PricingPlans = () => {
   return (
     <div className="bg-gray-100 min-h-screen py-12 px-4 sm:px-6 lg:px-20">
       <div className="max-w-7xl mx-auto text-center">
-        <h2 className="text-3xl font-bold text-gray-900 hover:text-[#073B3A] transition-colors duration-300">Choose the right plan for you</h2>
+        <h2 className="text-3xl font-bold bg-gradient-to-b from-[#629584] to-gray-800 bg-clip-text text-transparent transition-colors duration-300">Choose the right plan for you</h2>
         <p className="mt-2 text-gray-500">Simple, transparent, and modern. Sell your property faster with the right tools</p>
         
         <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
