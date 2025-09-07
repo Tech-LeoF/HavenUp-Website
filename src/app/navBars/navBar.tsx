@@ -98,16 +98,23 @@ export function NavBar({ role }: NavBarProps) {
                     Settings
                 </Link>
                 <Link
+                  href="/perfilVendedor"
+                  className={`text-white transition duration-300 cursor-pointer text-[clamp(0.5rem,2vw,1rem)] hover:drop-shadow-[0_0_4px_gray] ${
+                  pathname === "/perfilVendedor" ? "border-b-2 border-[#629584]" : ""
+                  }`}>
+                    My profile
+                </Link>
+                <Link
                   href="/PremiumPlan"
                   className={`text-white transition duration-300 cursor-pointer text-[clamp(0.5rem,2vw,1rem)] hover:drop-shadow-[0_0_4px_gray] ${
                   pathname === "/PremiumPlan" ? "border-b-2 border-blue-400" : ""
                   }`}>
                     Premium plans
                 </Link>
+              
               </div>
-              <button className="text-white bg-[#629584] w-[clamp(3rem,8vw,15rem)] h-[clamp(2rem,6vh,3rem)] text-[clamp(0.8rem,1.5vw,1rem)] rounded-lg cursor-pointer hover:drop-shadow-[0_0_4px_gray] transition duration-400">
-                      My Profile 
-              </button>
+                
+            
           </>
         )}
 
@@ -135,12 +142,15 @@ export function NavBar({ role }: NavBarProps) {
                 }`}>
                   Settings
               </Link>
+              <Link
+                  href="/perfilComprador"
+                  className={`text-white transition duration-300 cursor-pointer text-[clamp(0.5rem,2vw,1rem)] hover:drop-shadow-[0_0_4px_gray] ${
+                  pathname === "/perfilComprador" ? "border-b-2 border-[#629584]" : ""
+                  }`}>
+                    My profile
+              </Link>
             
             </div>
-
-            <button className="text-white bg-[#629584] w-[clamp(3rem,8vw,15rem)] h-[clamp(2rem,6vh,3rem)] text-[clamp(0.8rem,1.5vw,1rem)] rounded-lg cursor-pointer hover:drop-shadow-[0_0_4px_gray] transition duration-400">
-                      My Profile 
-            </button>
 
           </>
         )}
