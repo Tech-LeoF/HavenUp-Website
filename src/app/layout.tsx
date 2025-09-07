@@ -4,6 +4,10 @@ import Layout from './navBars/page';
 import { Geist, Geist_Mono } from 'next/font/google';
 import ClerkProviderWrapper from './providers/ClerkProviderWrapper';
 import Pie from './footer/page';
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
 
 const geistSans = Geist({
   variable: '--font-geist-sans',

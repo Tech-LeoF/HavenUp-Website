@@ -105,6 +105,9 @@ export function NavBar({ role }: NavBarProps) {
                     Premium plans
                 </Link>
               </div>
+              <button className="text-white bg-[#629584] w-[clamp(3rem,8vw,15rem)] h-[clamp(2rem,6vh,3rem)] text-[clamp(0.8rem,1.5vw,1rem)] rounded-lg cursor-pointer hover:drop-shadow-[0_0_4px_gray] transition duration-400">
+                      My Profile 
+              </button>
           </>
         )}
 
@@ -132,7 +135,12 @@ export function NavBar({ role }: NavBarProps) {
                 }`}>
                   Settings
               </Link>
+            
             </div>
+
+            <button className="text-white bg-[#629584] w-[clamp(3rem,8vw,15rem)] h-[clamp(2rem,6vh,3rem)] text-[clamp(0.8rem,1.5vw,1rem)] rounded-lg cursor-pointer hover:drop-shadow-[0_0_4px_gray] transition duration-400">
+                      My Profile 
+            </button>
 
           </>
         )}
@@ -159,6 +167,7 @@ export function NavBar({ role }: NavBarProps) {
           >
             Log out
           </button>
+          
         )}
 
         <Link href="/perfil">
