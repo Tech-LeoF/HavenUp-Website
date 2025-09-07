@@ -223,11 +223,11 @@ export default function Page() {
             Share your opinion and help others find their home.
           </h2>
 
-          <div className="flex flex-col max-w-xl mx-auto mt-4 bg-black-40">
+          <div className="flex flex-col max-w-xl mx-auto mt-4 bg-black/50 p-6 rounded-xl shadow-lg text-gray-700 ">
             <input
               type="text"
               placeholder="Write your review"
-              className="flex-1 px-4 py-3 text-sm rounded-l-full focus:outline-none"
+              className="flex-1 px-4 py-3 text-sm text-white rounded-l-full focus:outline-none"
               value={newComment}
               onFocus={() => setIsFormOpen(true)}
               onChange={(e) => setNewComment(e.target.value)}
@@ -238,7 +238,7 @@ export default function Page() {
                 <input
                   type="text"
                   placeholder="Your name"
-                  className="px-4 py-2 rounded-lg border focus:outline-none"
+                  className="text-white px-4 py-2 rounded-lg border focus:outline-none"
                   value={newName}
                   onChange={(e) => setNewName(e.target.value)}
                 />
@@ -257,7 +257,7 @@ export default function Page() {
             )}
 
             <button
-              className="bg-[#629584] hover:bg-[#073B3A] text-white font-medium px-6 py-3 rounded-full mt-2 self-end"
+              className="bg-[#629584] hover:bg-[#073B3A] text-sm text-white font-medium px-5 py-1 rounded-full mt-2 self-end"
               onClick={addReview}
             >
               Send
