@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 interface Step3Props {
   formData: any;
   onChange?: (field: string, value: any) => void;
@@ -72,8 +74,12 @@ export default function Step3({ formData, onChange, onBack, onSubmit }: Step3Pro
             </div>
 
             <div className="flex space-x-4">
-              <button onClick={onBack} className="mt-4 w-40 h-10 bg-gray-300 rounded-lg">Back</button>
-              <button onClick={onSubmit} className="mt-4 w-40 h-10 bg-[#FFD166] rounded-lg">Submit</button>
+              <Link href={'/Step2'}>
+                <button onClick={onBack} className="mt-4 w-40 h-10 bg-gray-300 rounded-lg">Back</button>
+              </Link>
+              <Link href={'/'}>
+                <button onClick={onSubmit} className="mt-4 w-40 h-10 bg-[#FFD166] rounded-lg">Submit</button>
+              </Link>
             </div>
           </div>
         </div>

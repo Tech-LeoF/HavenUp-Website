@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 interface Step2Props {
   formData: any;
   onChange?: (field: string, value: any) => void;
@@ -46,8 +48,12 @@ export default function Step2({ formData, onChange, onNext, onBack }: Step2Props
             </div>
 
             <div className="flex space-x-4">
-              <button onClick={onBack} className="mt-4 w-40 h-10 bg-gray-300 rounded-lg">Back</button>
-              <button onClick={onNext} className="mt-4 w-40 h-10 bg-[#FFD166] rounded-lg">Next</button>
+              <Link href={'/stepsInfo'}>
+                <button onClick={onBack} className="mt-4 w-40 h-10 bg-gray-300 rounded-lg">Back</button>
+              </Link>
+              <Link href={'Step3'}>
+                <button onClick={onNext} className="mt-4 w-40 h-10 bg-[#FFD166] rounded-lg">Next</button>
+              </Link>
             </div>
           </div>
         </div>

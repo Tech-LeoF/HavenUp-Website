@@ -1,8 +1,8 @@
 "use client";
 import { useState } from "react";
 import Step1 from "./step1";
-import Step2 from "./step2";
-import Step3 from "./step3";
+import Step2 from "../Step2/step2";
+import Step3 from "../Step3/step3";
 import PreviewCard from "./card";
 
 export default function FormPublicar() {

@@ -22,8 +22,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
       <head>
-         <link rel="icon" href="/Imgs/logo-rounded.png" key="favicon" />
-         <title>HavenUp!</title>
+        <link rel="icon" href="/Imgs/logo-rounded.png" key="favicon" />
+        <title>HavenUp!</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
       rel="stylesheet"
@@ -38,9 +38,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Layout>
             {children}
           </Layout>
-        <br /><br />
         <Pie/>
-          
         </ClerkProviderWrapper>
       </body>
     </html>

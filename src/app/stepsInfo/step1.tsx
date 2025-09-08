@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 interface Step1Props {
   formData: any;
   onChange?: (field: string, value: any) => void;
@@ -111,12 +113,14 @@ export default function Step1({ formData, onChange, onNext }: Step1Props) {
             </div>
 
             <div>
-              <button
+              <Link href={'/Step2'}>
+                <button
                 onClick={onNext}
-                className="mt-4 w-40 h-10 bg-[#FFD166] rounded-lg"
-              >
+                className="mt-4 w-40 h-10 bg-[#FFD166] rounded-lg hover:bg-[#FFD166CC] cursor-pointer"
+                >
                 Next
               </button>
+              </Link>
             </div>
           </div>
         </div>

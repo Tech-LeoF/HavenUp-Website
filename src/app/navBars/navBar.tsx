@@ -47,7 +47,7 @@ export function NavBar({ role }: NavBarProps) {
     <nav style={{ fontFamily: "'Poppins', sans-serif" }} className="bg-[#073B3A] flex items-center justify-between px-[clamp(1rem,5vw,5rem)] py-0.1 ">
       <div>
         <img
-          className="cursor-pointer drop-shadow-[0_0_4px_gray] transition duration-400 w-[clamp(4rem,7vw,7rem)] h-[clamp(6rem,7vw,7rem)]"
+          className="cursor-pointer  transition duration-400 hover:drop-shadow-[0_0_4px_gray] w-[clamp(4rem,7vw,7rem)] h-[clamp(6rem,7vw,7rem)]"
           src="/Imgs/Logo-BG-rounded.png"
           alt="Logo"
         />
@@ -79,35 +79,28 @@ export function NavBar({ role }: NavBarProps) {
                 <Link
                   href="/stepsInfo"
                   className={`text-white transition duration-300 cursor-pointer text-[clamp(0.5rem,2vw,1rem)] hover:drop-shadow-[0_0_4px_gray] ${
-                  pathname === "/stepsInfo" ? "border-b-2 border-[#629584]" : ""
+                  pathname === "/stepsInfo" || pathname === "/Step2" || pathname === "/Step3"? "border-b-2 border-[#629584]" : ""
                   }`}>
                     Publish
                 </Link>
                 <Link
-                  href="/Mensajes"
+                  href="/chatbot"
                   className={`text-white transition duration-300 cursor-pointer text-[clamp(0.5rem,2vw,1rem)] hover:drop-shadow-[0_0_4px_gray] ${
-                  pathname === "/Mensajes" ? "border-b-2 border-[#629584]" : ""
+                  pathname === "/chatbot" ? "border-b-2 border-[#629584]" : ""
                   }`}>
                     Chat
-                </Link>
-                <Link
-                  href="/perfil"
-                  className={`text-white transition duration-300 cursor-pointer text-[clamp(0.5rem,2vw,1rem)] hover:drop-shadow-[0_0_4px_gray] ${
-                  pathname === "/perfil" ? "border-b-2 border-[#629584]" : ""
-                  }`}>
-                    Settings
                 </Link>
                 <Link
                   href="/perfilVendedor"
                   className={`text-white transition duration-300 cursor-pointer text-[clamp(0.5rem,2vw,1rem)] hover:drop-shadow-[0_0_4px_gray] ${
                   pathname === "/perfilVendedor" ? "border-b-2 border-[#629584]" : ""
                   }`}>
-                    My profile
+                    Status
                 </Link>
                 <Link
                   href="/PremiumPlan"
                   className={`text-white transition duration-300 cursor-pointer text-[clamp(0.5rem,2vw,1rem)] hover:drop-shadow-[0_0_4px_gray] ${
-                  pathname === "/PremiumPlan" ? "border-b-2 border-blue-400" : ""
+                  pathname === "/PremiumPlan" ? "border-b-2 border-[#629584]" : ""
                   }`}>
                     Premium plans
                 </Link>
