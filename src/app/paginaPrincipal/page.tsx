@@ -53,7 +53,7 @@ export default function Page() {
       id: 1,
       title: "House in colonia Mira Monte.",
       city: "Sonsonate",
-      img: "/Imgs/casamiramonte.png",
+      img: "/Imgs/Visualizacióncasa.png",
       details: ["136m²", "3🛏", "2🛁", "1🚗"],
     },
     {

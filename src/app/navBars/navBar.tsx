@@ -122,9 +122,9 @@ export function NavBar({ role }: NavBarProps) {
                   Buy houses
               </Link>
               <Link
-                href="/Mensajes"
+                href="/chatbot"
                 className={`text-white transition duration-300 cursor-pointer text-[clamp(0.5rem,2vw,1rem)] hover:drop-shadow-[0_0_4px_gray] ${
-                pathname === "/Mensajes" ? "border-b-2 border-[#629584]" : ""
+                pathname === "/chatbot" ? "border-b-2 border-[#629584]" : ""
                 }`}>
                   Chat
               </Link>
@@ -140,7 +140,7 @@ export function NavBar({ role }: NavBarProps) {
                   className={`text-white transition duration-300 cursor-pointer text-[clamp(0.5rem,2vw,1rem)] hover:drop-shadow-[0_0_4px_gray] ${
                   pathname === "/perfilComprador" ? "border-b-2 border-[#629584]" : ""
                   }`}>
-                    My profile
+                    Status
               </Link>
             
             </div>
