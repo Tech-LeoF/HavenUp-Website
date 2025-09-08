@@ -54,7 +54,7 @@ export function NavBar({ role }: NavBarProps) {
       </div>
 
      
-      {/* LINKS / BOTONES */}
+     
       <div className="flex space-x-8 text-white items-center">
         <Link
           href="/"
