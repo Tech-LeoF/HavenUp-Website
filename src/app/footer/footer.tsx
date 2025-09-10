@@ -15,11 +15,9 @@ const Footer: React.FC = () => {
             className="sm:w-12 sm:h-12 md:w-20 md:h-20 lg:w-28 lg:h-28 rounded-full object-cover mb-4"
             />
             <p className="text-xs leading-relaxed">
-            Querido usuario acepta las políticas de HavenUp al buscar una experiencia inmobiliaria más clara, segura y tecnológica. Reconoce la
-            necesidad de asesoría, recorridos virtuales y transparencia en el proceso. Al usar la plataforma, se compromete a interactuar de forma
-            responsable y ética. Esta aceptación permite mejorar la conexión entre oferta y demanda de vivienda.
+            Dear user, you accept the policies of HavenUp when seeking a clearer, safer, and more technological real estate experience. You recognize the need for advice, virtual tours, and transparency in the process. By using the platform, you commit to interacting responsibly and ethically. This acceptance allows for better connection between the supply and demand for housing.
             </p>
-            <p className="text-xs mt-8">*2025 Dterms. All Rights reserved</p>
+            <p className="text-xs mt-8">{'\u00A9'} 2025 Dterms. All Rights reserved</p>
         </div>
 
         {/* Links */}
