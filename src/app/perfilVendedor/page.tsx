@@ -171,7 +171,7 @@ const Profile: React.FC = () => {
             >
               {properties.map((property) => (
                 <SwiperSlide key={property.id} className="flex p-4">
-                  <div className="bg-white rounded-xl p-4 shadow-lg shadow-2xl transition transform hover:-translate-y-2 cursor-pointer flex flex-col justify-between w-full">
+                  <div className="bg-white rounded-xl p-4 g shadow-2xl transition transform hover:-translate-y-2 cursor-pointer flex flex-col justify-between w-full">
                     <div className="w-full h-40 mb-4 overflow-hidden rounded-lg">
                       <img
                         src={property.img}
