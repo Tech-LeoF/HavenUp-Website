@@ -48,56 +48,125 @@ export default function Page() {
   const [newRating, setNewRating] = useState(5);
   const [isFormOpen, setIsFormOpen] = useState(false);
 
-  const houses: House[] = [
-    {
-      id: 1,
-      title: "House in colonia Mira Monte.",
-      city: "Sonsonate",
-      img: "/Imgs/Visualizacióncasa.png",
-      details: ["136m²", "3🛏", "2🛁", "1🚗"],
-    },
-    {
-      id: 2,
-      title: "House in colonia San Luis.",
-      city: "San Salvador",
-      img: "/Imgs/casasanluis.png",
-      details: ["111m²", "3🛏", "2🛁", "1🚗"],
-    },
-    {
-      id: 3,
-      title: "House in colonia San Luis Abad.",
-      city: "San Salvador",
-      img: "/Imgs/casaabad.png",
-      details: ["100m²", "2🛏", "1🛁", "1🚗"],
-    },
-    {
-      id: 4,
-      title: "House in Residencial Monte Carlo.",
-      city: "San Salvador",
-      img: "/Imgs/casaresidencial.png",
-      details: ["136m²", "3🛏", "3🛁", "4🚗"],
-    },
-    {
-      id: 5,
-      title: "House in Ciudad Versalles.",
-      city: "San Juan Opico",
-      img: "/Imgs/casaversalles.png",
-      details: ["460m²", "6🛏", "3🛁", "4🚗"],
-    },
-    {
-      id: 6,
-      title: "House in Colonia San Benito.",
-      city: "San Salvador",
-      img: "/Imgs/casabenito.png",
-      details: ["710m²", "5🛏", "4🛁", "3🚗"],
-    },
-  ];
+    const [sortType, setSortType] = useState<"popular" | "newest">("popular");
 
-  const filteredHouses = houses.filter(
-    (house) =>
-      house.title.toLowerCase().includes(search.toLowerCase()) ||
-      house.city.toLowerCase().includes(search.toLowerCase())
-  );
+    // Casas populares
+    const popularHouses: House[] = [
+        {
+            id: 1,
+            title: "House in colonia Mira Monte.",
+            city: "Sonsonate",
+            img: "/Imgs/casamiramonte.png",
+            details: ["136m²", "3🛏", "2🛁", "1🚗"],
+            date: "2023-12-01",
+        },
+        {
+            id: 2,
+            title: "House in colonia San Luis.",
+            city: "San Salvador",
+            img: "/Imgs/casasanluis.png",
+            details: ["111m²", "3🛏", "2🛁", "1🚗"],
+            date: "2024-02-15",
+        },
+        {
+            id: 3,
+            title: "House in colonia San Luis Abad.",
+            city: "San Salvador",
+            img: "/Imgs/casaabad.png",
+            details: ["100m²", "2🛏", "1🛁", "1🚗"],
+            date: "2024-04-10",
+        },
+        {
+            id: 4,
+            title: "House in Residencial Monte Carlo.",
+            city: "San Salvador",
+            img: "/Imgs/casaresidencial.png",
+            details: ["136m²", "3🛏", "3🛁", "4🚗"],
+            date: "2024-06-01",
+        },
+        {
+            id: 5,
+            title: "House in Ciudad Versalles.",
+            city: "San Juan Opico",
+            img: "/Imgs/casaversalles.png",
+            details: ["460m²", "6🛏", "3🛁", "4🚗"],
+            date: "2024-07-20",
+        },
+        {
+            id: 6,
+            title: "House in Colonia San Benito.",
+            city: "San Salvador",
+            img: "/Imgs/casabenito.png",
+            details: ["710m²", "5🛏", "4🛁", "3🚗"],
+            date: "2024-08-25",
+        },
+    ];
+
+    // Casas nuevas (Newest)
+    const newestHouses: House[] = [
+        {
+            id: 7,
+            title: "House in versailles city.",
+            city: "San Juan Opico",
+            img: "/Imgs/newest1.png",
+            details: ["77m²", "3🛏", "2🛁", "1🚗"],
+            date: "2025-08-28",
+        },
+        {
+            id: 8,
+            title: "House in versailles city.",
+            city: "San Juan Opico",
+            img: "/Imgs/newest2.png",
+            details: ["135m²", "4🛏", "3🛁", "2🚗"],
+            date: "2025-08-28",
+        },
+        {
+            id: 9,
+            title: "House in versailles city.",
+            city: "San Juan Opico",
+            img: "/Imgs/newest3.png",
+            details: ["163m²", "4🛏", "2🛁", "2🚗"],
+            date: "2025-08-28",
+        },
+        {
+            id: 10,
+            title: "House in versailles city.",
+            city: "San Juan Opico",
+            img: "/Imgs/newest4.png",
+            details: ["80m²", "3🛏", "3🛁", "3🚗"],
+            date: "2025-08-28",
+        },
+        {
+            id: 11,
+            title: "House in versailles city.",
+            city: "San Juan Opico",
+            img: "/Imgs/newest5.png",
+            details: ["100m²", "5🛏", "4🛁", "4🚗"],
+            date: "2025-08-28",
+        },
+        {
+            id: 12,
+            title: "House in Villa del Mar",
+            city: "Santa Tecla",
+            img: "/Imgs/newest6.png",
+            details: ["400m²", "4🛏", "3🛁", "2🚗"],
+            date: "2025-08-28",
+        },
+    ];
+
+    // Selecciona el array según el botón
+    const filteredHouses = (sortType === "popular" ? popularHouses : newestHouses)
+        .filter(
+            (house) =>
+                house.title.toLowerCase().includes(search.toLowerCase()) ||
+                house.city.toLowerCase().includes(search.toLowerCase())
+        )
+        .sort((a, b) => {
+            if (sortType === "newest") {
+                return new Date(b.date).getTime() - new Date(a.date).getTime();
+            }
+            return 0;
+        });
 
   const addReview = () => {
     if (!newName.trim() || !newComment.trim()) return;
