@@ -26,7 +26,7 @@ const HouseDetails: React.FC = () => {
       
       <div className="pt-0.10 pb-5 px-20 relative mt-5">
         <img
-          src="/Imgs/Visualizacióncasa.png"
+          src="/Imgs/casamiramonte.avif"
           alt="House"
           className="w-full h-[500px] object-cover rounded-lg"
         />

@@ -9,6 +9,7 @@ type House = {
   city: string;
   img: string;
   details: string[];
+  date: string;
 };
 
 type Review = {
@@ -56,7 +57,7 @@ export default function Page() {
             id: 1,
             title: "House in colonia Mira Monte.",
             city: "Sonsonate",
-            img: "/Imgs/casamiramonte.png",
+            img: "/Imgs/casamiramonte.avif",
             details: ["136m²", "3🛏", "2🛁", "1🚗"],
             date: "2023-12-01",
         },
@@ -64,7 +65,7 @@ export default function Page() {
             id: 2,
             title: "House in colonia San Luis.",
             city: "San Salvador",
-            img: "/Imgs/casasanluis.png",
+            img: "/Imgs/casasanluis.jpg",
             details: ["111m²", "3🛏", "2🛁", "1🚗"],
             date: "2024-02-15",
         },
@@ -72,7 +73,7 @@ export default function Page() {
             id: 3,
             title: "House in colonia San Luis Abad.",
             city: "San Salvador",
-            img: "/Imgs/casaabad.png",
+            img: "/Imgs/casaabad.webp",
             details: ["100m²", "2🛏", "1🛁", "1🚗"],
             date: "2024-04-10",
         },
@@ -80,7 +81,7 @@ export default function Page() {
             id: 4,
             title: "House in Residencial Monte Carlo.",
             city: "San Salvador",
-            img: "/Imgs/casaresidencial.png",
+            img: "/Imgs/casaresidencial.avif",
             details: ["136m²", "3🛏", "3🛁", "4🚗"],
             date: "2024-06-01",
         },
@@ -96,7 +97,7 @@ export default function Page() {
             id: 6,
             title: "House in Colonia San Benito.",
             city: "San Salvador",
-            img: "/Imgs/casabenito.png",
+            img: "/Imgs/casabenito.jpeg",
             details: ["710m²", "5🛏", "4🛁", "3🚗"],
             date: "2024-08-25",
         },
