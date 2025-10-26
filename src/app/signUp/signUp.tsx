@@ -1,7 +1,8 @@
 'use client';
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useSignUp } from "@clerk/nextjs";
+import Link from "next/link";
 
 export default function SignUp() {
     const { isLoaded, signUp, setActive } = useSignUp();
@@ -70,6 +71,21 @@ const registrar = async (e: React.FormEvent) => {
     }
 };
 
+ const [form, setForm] = useState({
+    name: '',
+    email: '',
+    password: '',
+  });
+
+useEffect(() => {
+    const savedForm = localStorage.getItem('registerForm');
+    if (savedForm) setForm(JSON.parse(savedForm));
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('registerForm', JSON.stringify(form));
+  }, [form]);
+
     return (
     <div
         className="w-full min-h-screen pt-12 pb-28 px-4 sm:px-0 flex justify-center items-start"
@@ -132,8 +148,9 @@ const registrar = async (e: React.FormEvent) => {
                 <span className="text-sm text-[#073B3A]">
                 I agree to the Terms of Service and Privacy Policy
                 </span>
-            </div>
-
+               
+            </div><br />
+             <span className="text-blue-500"><Link href='/terms?from=signUp'>See Terms of Service</Link></span>
             <div id="clerk-captcha" />
 
             <button
