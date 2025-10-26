@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import { FaFacebookF, FaInstagram, FaYoutube, FaTiktok } from 'react-icons/fa'
+import Link from 'next/link'
 
 const Footer: React.FC = () => {
     return (
@@ -40,9 +41,11 @@ const Footer: React.FC = () => {
         {/* Others column 1 */}
         <nav className="flex flex-col space-y-4 min-w-[140px]" aria-label="Others">
             <h4 className="text-white border-l-2 border-[#66CDAA] pl-2 mb-2">Others</h4>
-            <a href="#" className="hover:text-white text-sm">
-            Terms and Of Services
-            </a>
+            <Link href='/terms'>
+            Terms of Services
+            </Link>
+            
+            
             <a href="#" className="hover:text-white text-sm">
             Privacy Police
             </a>
