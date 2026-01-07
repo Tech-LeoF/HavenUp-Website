@@ -187,7 +187,7 @@ export default function Page() {
   };
 
   return (
-    <div className="bg-pink-100">
+    <div className="bg-[var(--background)] text-[var(--foreground)]">
       {/* Hero Section */}
       <div className="relative w-full h-screen flex items-center justify-center">
         <video
@@ -234,7 +234,7 @@ export default function Page() {
       </div>
 
       {/* Properties Section */}
-      <div className="bg-gray-100 py-10 px-4">
+      <div className="bg-[var(--background)] text-[var(--foreground)] py-10 px-4">
         <div className="max-w-6xl mx-auto px-4 mb-6 flex items-center space-x-2">
           <button
             onClick={() => setSortType("popular")}

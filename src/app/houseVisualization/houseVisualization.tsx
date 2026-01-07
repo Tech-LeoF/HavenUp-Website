@@ -7,7 +7,7 @@ const HouseDetails: React.FC = () => {
   const position: [number, number] = [13.6980, -89.1910];
 
   return (
-    <div className="bg-gray-50 text-gray-800 min-h-screen">
+    <div className="bg-[var(--background)] text-[var(--foreground)] min-h-screen">
       {/* Título */}
       <h2 className="text-center text-2xl font-semibold py-5">House Details</h2>
 

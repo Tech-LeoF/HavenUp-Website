@@ -76,8 +76,8 @@ const Profile: React.FC = () => {
 
   return (
     <>
-      <div className="p-20 font-sans">
-        <h1 className="text-4xl font-bold mb-10 text-black">My Profile</h1>
+      <div className="p-20 font-sans bg-[var(--background)] text-[var(--foreground)]">
+        <h1 className="text-4xl font-bold mb-10 bg-[var(--background)] text-[var(--foreground)]">My Profile</h1>
 
         {/* User Info */}
         <div className="flex items-center space-x-4 mb-10">
@@ -85,7 +85,7 @@ const Profile: React.FC = () => {
             L
           </div>
           <div>
-            <h2 className="text-lg text-black font-bold">Leonardo López</h2>
+            <h2 className="text-lg bg-[var(--background)] text-[var(--foreground)] font-bold">Leonardo López</h2>
             <p className="text-gray-600 text-sm">Verified Seller</p>
             <p className="text-gray-600 text-sm">Real Estate Agent</p>
           </div>
@@ -109,14 +109,14 @@ const Profile: React.FC = () => {
 
         {/* Account Status */}
         <div>
-          <h2 className="text-black text-lg font-bold mb-4">Account Status</h2>
+          <h2 className="bg-[var(--background)] text-[var(--foreground)] text-lg font-bold mb-4">Account Status</h2>
 
           <div className="flex items-center justify-between mb-3">
             <div className="flex items-center space-x-3">
               <div className="w-8 h-8 flex items-center justify-center">
                 <img src="/Imgs/verificación.png" alt="verification" />
               </div>
-              <span className="text-black">Verified</span>
+              <span className="bg-[var(--background)] text-[var(--foreground)]">Verified</span>
             </div>
             <span>✔️</span>
           </div>
@@ -126,7 +126,7 @@ const Profile: React.FC = () => {
               <div className="w-8 h-8 flex items-center justify-center">
                 <img src="/Imgs/estrella.png" alt="star" />
               </div>
-              <span className="text-black">Top Seller Badge</span>
+              <span className="bg-[var(--background)] text-[var(--foreground)]">Top Seller Badge</span>
             </div>
             <span>✔️</span>
           </div>
@@ -134,7 +134,7 @@ const Profile: React.FC = () => {
       </div>
 
       {/* Messages & Properties */}
-      <div className="bg-white text-gray-800 pt-1 pb-20 px-20 font-sans">
+      <div className="bg-[var(--background)] text-[var(--foreground)] pt-1 pb-20 px-20 font-sans">
         {/* Messages Section */}
         <section>
           <h2 className="text-2xl font-semibold mb-6">Messages</h2>

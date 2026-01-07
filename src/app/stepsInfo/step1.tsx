@@ -12,16 +12,16 @@ export default function Step1({ formData, onChange, onNext }: Step1Props) {
   return (
     <figure
       style={{ fontFamily: "'Poppins', sans-serif" }}
-      className="bg-white w-full h-260 flex justify-center items-center"
+      className="bg-[var(--background)] text-[var(--foreground)] w-full h-260 flex justify-center items-center"
     >
       <div className="absolute -mt-233 -ml-19">
-        <p className="text-black text-3xl font-bold">Step 1 - Basic Information</p>
+        <p className=" text-3xl font-bold">Step 1 - Basic Information</p>
       </div>
       <div className="bg-white-100 w-140 h-200 rounded-lg">
         <div className="text-black flex justify-center items-center w-120">
           <div className="space-y-10">
             <div className="space-y-2">
-              <p>Property Title</p>
+              <p className="bg-[var(--background)] text-[var(--foreground)]" >Property Title</p>
               <input
                 value={formData?.title || ""}
                 onChange={(e) => onChange && onChange("title", e.target.value)}
@@ -32,7 +32,7 @@ export default function Step1({ formData, onChange, onNext }: Step1Props) {
             </div>
 
             <div className="space-y-2">
-              <p>Property Type</p>
+              <p className="bg-[var(--background)] text-[var(--foreground)]">Property Type</p>
               <select
                 value={formData?.property_type || ""}
                 onChange={(e) => onChange && onChange("property_type", e.target.value)}
@@ -51,7 +51,7 @@ export default function Step1({ formData, onChange, onNext }: Step1Props) {
             </div>
 
             <div className="space-y-2">
-              <p>Location</p>
+              <p className="bg-[var(--background)] text-[var(--foreground)]">Location</p>
               <input
                 value={formData?.location || ""}
                 onChange={(e) => onChange && onChange("location", e.target.value)}
@@ -62,7 +62,7 @@ export default function Step1({ formData, onChange, onNext }: Step1Props) {
             </div>
 
             <div className="space-y-2">
-              <p>Price</p>
+              <p className="bg-[var(--background)] text-[var(--foreground)]">Price</p>
               <input
                 value={formData?.price || ""}
                 onChange={(e) => onChange && onChange("price", e.target.value)}
@@ -73,7 +73,7 @@ export default function Step1({ formData, onChange, onNext }: Step1Props) {
             </div>
 
             <div className="space-y-2">
-              <p>Built Area (m2)</p>
+              <p className="bg-[var(--background)] text-[var(--foreground)]">Built Area (m2)</p>
               <input
                 value={formData?.built_area || ""}
                 onChange={(e) => onChange && onChange("built_area", e.target.value)}
@@ -84,7 +84,7 @@ export default function Step1({ formData, onChange, onNext }: Step1Props) {
             </div>
 
             <div className="space-y-2">
-              <p>Land Area (m2)</p>
+              <p className="bg-[var(--background)] text-[var(--foreground)]">Land Area (m2)</p>
               <input
                 value={formData?.land_area || ""}
                 onChange={(e) => onChange && onChange("land_area", e.target.value)}
@@ -95,7 +95,7 @@ export default function Step1({ formData, onChange, onNext }: Step1Props) {
             </div>
 
             <div className="space-y-2">
-              <p>Legal Status</p>
+              <p className="bg-[var(--background)] text-[var(--foreground)]">Legal Status</p>
               <select
                 value={formData?.legal_status || ""}
                 onChange={(e) => onChange && onChange("legal_status", e.target.value)}

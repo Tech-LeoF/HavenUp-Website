@@ -81,7 +81,7 @@ const Profile: React.FC = () => {
   return (
     <>
       <div className="p-20 font-sans">
-        <h1 className="text-4xl font-bold mb-10 text-black">My Profile</h1>
+        <h1 className="text-4xl font-bold mb-10 bg-[var(--background)] text-[var(--foreground)]">My Profile</h1>
 
         {/* Perfil */}
         <div className="flex items-center space-x-4 mb-10">
@@ -89,7 +89,7 @@ const Profile: React.FC = () => {
             L
           </div>
           <div>
-            <h2 className="text-lg text-black font-bold">Leonardo López</h2>
+            <h2 className="text-lg bg-[var(--background)] text-[var(--foreground)] font-bold">Leonardo López</h2>
             <p className="text-gray-600 text-sm">Buyer account</p>
             <p className="text-gray-600 text-sm">Joined 2025</p>
           </div>
@@ -191,7 +191,7 @@ const Profile: React.FC = () => {
       </section>
 
       {/* Mensajes */}
-      <div className="bg-white text-gray-800 pt-0.10 pb-20 px-20 font-sans">
+      <div className="bg-[var(--background)] text-[var(--foreground)] pt-0.10 pb-20 px-20 font-sans">
         <section>
           <h2 className="text-2xl font-semibold mb-6">Messages</h2>
           {messages.map((msg, index) => (
@@ -210,7 +210,7 @@ const Profile: React.FC = () => {
 
       {/* Búsquedas y alertas */}
       <section className="pt-0.10 pb-5 px-20">
-        <h2 className="text-lg font-semibold mb-6 text-black">
+        <h2 className="text-lg font-semibold mb-6 bg-[var(--background)] text-[var(--foreground)]">
           Search and Alerts
         </h2>
         <div className="space-y-4 mb-6">

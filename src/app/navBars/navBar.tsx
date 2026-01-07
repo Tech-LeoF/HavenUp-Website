@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useUser, useClerk } from "@clerk/nextjs";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
+import Modo from "../components/claroOscuro";
 
 interface NavBarProps {
   role?: "Seller" | "Buyer";
@@ -115,25 +116,11 @@ export function NavBar({ role }: NavBarProps) {
           <>
             <div className="flex space-x-6">
               <Link
-                href="/buy"
-                className={`text-white transition duration-300 cursor-pointer text-[clamp(0.5rem,2vw,1rem)] hover:drop-shadow-[0_0_4px_gray] ${
-                pathname === "/buy" ? "border-b-2 border-[#629584]" : ""
-                }`}>
-                  Buy houses
-              </Link>
-              <Link
                 href="/chatbot"
                 className={`text-white transition duration-300 cursor-pointer text-[clamp(0.5rem,2vw,1rem)] hover:drop-shadow-[0_0_4px_gray] ${
                 pathname === "/chatbot" ? "border-b-2 border-[#629584]" : ""
                 }`}>
                   Chat
-              </Link>
-              <Link
-                href="/perfil"
-                className={`text-white transition duration-300 cursor-pointer text-[clamp(0.5rem,2vw,1rem)] hover:drop-shadow-[0_0_4px_gray] ${
-                pathname === "/perfil" ? "border-b-2 border-[#629584]" : ""
-                }`}>
-                  Settings
               </Link>
               <Link
                   href="/perfilComprador"
@@ -192,6 +179,7 @@ export function NavBar({ role }: NavBarProps) {
             </div>
           )}
         </Link>
+        <Modo/>
       </div>
     </nav>
   );

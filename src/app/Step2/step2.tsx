@@ -16,34 +16,34 @@ export default function Step2({ formData, onChange, onNext, onBack }: Step2Props
   };
 
   return (
-    <figure style={{ fontFamily: "'Poppins', sans-serif" }} className="bg-white w-full h-260 flex justify-center items-center">
+    <figure style={{ fontFamily: "'Poppins', sans-serif" }} className="bg-[var(--background)] text-[var(--foreground)] w-full h-260 flex justify-center items-center">
       <div className="absolute -mt-233 -ml-19">
-        <p className="text-black text-3xl font-bold">Step 2 - Media Upload</p>
+        <p className="bg-[var(--background)] text-[var(--foreground)] text-3xl font-bold">Step 2 - Media Upload</p>
       </div>
       <div className="bg-white-100 w-140 h-200 rounded-lg">
         <div className="text-black flex justify-center items-center w-120">
           <div className="space-y-10">
             {/* Fotos */}
             <div className="space-y-2">
-              <p>Photos</p>
+              <p className="bg-[var(--background)] text-[var(--foreground)]">Photos</p>
               <input
                 type="file"
                 multiple
                 accept="image/*"
                 onChange={(e) => handleFileChange("fotos", e.target.files)}
-                className="w-90"
+                className="w-90 bg-[var(--background)] text-[var(--foreground)]"
               />
             </div>
 
             {/* Videos */}
             <div className="space-y-2">
-              <p>Videos</p>
+              <p className="bg-[var(--background)] text-[var(--foreground)]">Videos</p>
               <input
                 type="file"
                 multiple
                 accept="video/*"
                 onChange={(e) => handleFileChange("videos", e.target.files)}
-                className="w-90"
+                className="w-90 bg-[var(--background)] text-[var(--foreground)]"
               />
             </div>
 

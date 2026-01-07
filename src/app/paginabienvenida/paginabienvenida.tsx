@@ -266,7 +266,7 @@ const PaginaPrincipal: React.FC = () => {
             </div>
 
             {/* Reviews Section */}
-            <div className="px-6 py-8 bg-white">
+            <div className="px-6 py-8 bg-[var(--background)] text-[var(--foreground)]">
                 <h3 className="text-xl font-bold mb-6">Top Reviews</h3>
                 {/* Reseña 1 */}
                 <div className="bg-green-50 rounded-lg p-4 mb-4 shadow-sm">

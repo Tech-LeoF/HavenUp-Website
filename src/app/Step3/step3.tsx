@@ -21,9 +21,9 @@ export default function Step3({ formData, onChange, onBack, onSubmit }: Step3Pro
   };
 
   return (
-    <figure style={{ fontFamily: "'Poppins', sans-serif" }} className="bg-white w-full h-260 flex justify-center items-center">
+    <figure style={{ fontFamily: "'Poppins', sans-serif" }} className="bg-[var(--background)] text-[var(--foreground)] w-full h-260 flex justify-center items-center">
       <div className="absolute -mt-233 -ml-19">
-        <p className="text-black text-3xl font-bold">Step 3 - Property Details</p>
+        <p className=" text-3xl font-bold bg-[var(--background)] text-[var(--foreground)]">Step 3 - Property Details</p>
       </div>
       <div className="bg-white-100 w-140 h-200 rounded-lg">
         <div className="text-black flex justify-center items-center w-120">
@@ -31,7 +31,7 @@ export default function Step3({ formData, onChange, onBack, onSubmit }: Step3Pro
 
             {/* Habitaciones */}
             <div className="space-y-2">
-              <p>Number of Bedrooms</p>
+              <p className="bg-[var(--background)] text-[var(--foreground)]">Number of Bedrooms</p>
               <select
                 value={formData?.habitaciones || 0}
                 onChange={(e) => onChange && onChange("habitaciones", Number(e.target.value))}
@@ -44,7 +44,7 @@ export default function Step3({ formData, onChange, onBack, onSubmit }: Step3Pro
 
             {/* Baños */}
             <div className="space-y-2">
-              <p>Number of Bathrooms</p>
+              <p className="bg-[var(--background)] text-[var(--foreground)]">Number of Bathrooms</p>
               <select
                 value={formData?.banos || 0}
                 onChange={(e) => onChange && onChange("banos", Number(e.target.value))}
@@ -57,7 +57,7 @@ export default function Step3({ formData, onChange, onBack, onSubmit }: Step3Pro
 
             {/* Servicios */}
             <div className="space-y-2">
-              <p>Services</p>
+              <p className="bg-[var(--background)] text-[var(--foreground)]">Services</p>
               <div className="flex flex-wrap gap-2">
                 {["Water", "Electricity", "Gas", "Internet"].map((s) => (
                   <label key={s} className="bg-[#F5F5DC] px-2 py-1 rounded-lg cursor-pointer">

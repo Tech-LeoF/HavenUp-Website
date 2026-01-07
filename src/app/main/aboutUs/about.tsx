@@ -2,7 +2,7 @@
 
 export default function About() {
 return (
-    <div className="px-6 sm:px-12 py-14 font-poppins text-[#073B3A] bg-[#FDFBF3] space-y-20">
+    <div className="px-6 sm:px-12 py-14 font-poppins bg-[var(--background)] text-[var(--foreground)] space-y-20">
 
       {/* About Us Section */}
         <div className="grid lg:grid-cols-2 gap-10 items-center">
@@ -73,25 +73,25 @@ return (
         <div className="max-w-4xl mx-auto space-y-6">
         <h2 className="text-center text-[clamp(1.4rem,3vw,2.2rem)] font-semibold">Our Values</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-        <div className="bg-[#FAF3D3] p-5 rounded-xl shadow-sm border border-[#629584]/30">
+        <div className="bg-[#FAF3D3] text-black p-5 rounded-xl shadow-sm border border-[#629584]/30">
         <h3 className="font-semibold text-lg mb-2">🤝 Trust</h3>
             <p className="text-[clamp(0.95rem,2vw,1.2rem)] leading-relaxed">
                 We’re transparent at every step so you can make secure decisions.
             </p>
         </div>
-        <div className="bg-[#FAF3D3] p-5 rounded-xl shadow-sm border border-[#629584]/30">
+        <div className="bg-[#FAF3D3] text-black p-5 rounded-xl shadow-sm border border-[#629584]/30">
         <h3 className="font-semibold text-lg mb-2">🎯 Commitment</h3>
         <p className="text-[clamp(0.95rem,2vw,1.2rem)] leading-relaxed">
             We’re with you from the first click to the moment you hold the keys.
         </p>
         </div>
-        <div className="bg-[#FAF3D3] p-5 rounded-xl shadow-sm border border-[#629584]/30">
+        <div className="bg-[#FAF3D3] text-black p-5 rounded-xl shadow-sm border border-[#629584]/30">
         <h3 className="font-semibold text-lg mb-2">💡 Innovation</h3>
             <p className="text-[clamp(0.95rem,2vw,1.2rem)] leading-relaxed">
                 We use modern tools that simplify—not complicate—the process.
             </p>
         </div>
-        <div className="bg-[#FAF3D3] p-5 rounded-xl shadow-sm border border-[#629584]/30">
+        <div className="bg-[#FAF3D3] text-black p-5 rounded-xl shadow-sm border border-[#629584]/30">
         <h3 className="font-semibold text-lg mb-2">💬 Closeness</h3>
         <p className="text-[clamp(0.95rem,2vw,1.2rem)] leading-relaxed">
             We listen with care, because every story matters.
