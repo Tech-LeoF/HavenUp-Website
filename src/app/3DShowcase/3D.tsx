@@ -119,20 +119,6 @@ export default function HouseViewer() {
 
             </div>
         </div>
-        <div className="flex flex-row justify-evenly">
-            <div className="w-220 h-80 bg-[#F5F5DC] rounded-lg">
-
-            </div>
-
-            <div className="flex flex-col space-y-8">
-                <div className="w-100 h-120 bg-[#F5F5DC] rounded-lg">
-
-                </div>
-                <div className="w-100 h-120 bg-[#F5F5DC] rounded-lg">
-
-                </div>
-            </div>
-        </div>
     </div>
 );
 }

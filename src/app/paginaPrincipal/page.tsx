@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
+import { useUser } from "@clerk/nextjs";
 
 type House = {
   id: number;
@@ -186,6 +187,11 @@ export default function Page() {
     setIsFormOpen(false);
   };
 
+  const {user, isLoaded} = useUser()
+    
+    if (!isLoaded) return <p>Loading...</p>
+  
+
   return (
     <div className="bg-[var(--background)] text-[var(--foreground)]">
       {/* Hero Section */}
@@ -307,7 +313,7 @@ export default function Page() {
             Share your opinion and help others find their home.
           </h2>
 
-          <div className="flex flex-col max-w-xl mx-auto mt-4 bg-black/40 p-6 rounded-xl shadow-lg text-gray-700">
+          <div className="flex flex-col max-w-xl mx-auto mt-4 bg-black/40 p-6 rounded-xl shadow-lg text-white">
             <input
               type="text"
               placeholder="Write your review"
@@ -350,8 +356,8 @@ export default function Page() {
         </div>
       </div>
 
-      <div className="px-6 py-8 bg-white">
-        <h3 className="text-xl font-bold mb-6 text-black">Top Reviews</h3>
+      <div className="px-6 py-8 bg-[var(--background)] text-[var(--foreground)]">
+        <h3 className="text-xl font-bold mb-6">Top Reviews</h3>
 
         {reviews.map((review) => (
           <div
@@ -360,12 +366,12 @@ export default function Page() {
           >
             <div className="flex items-center gap-3">
               <img
-                src={review.avatar}
+                src={user?.imageUrl}
                 alt={review.name}
-                className="w-10 h-10 rounded-full border"
+                className="w-10 h-10 rounded-full"
               />
               <div>
-                <p className="font-semibold text-black">{review.name}</p>
+                <p className="font-semibold text-black">{user?.fullName}</p>
                 <span className="text-gray-500 text-sm">{review.date}</span>
               </div>
             </div>

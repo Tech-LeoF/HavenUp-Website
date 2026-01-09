@@ -6,9 +6,14 @@ import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { useUser } from "@clerk/nextjs";
+
 
 const Profile: React.FC = () => {
   const [showAll, setShowAll] = useState(false);
+  const {user, isLoaded} = useUser()
+
+  if (!isLoaded) return <p>Loading...</p>
 
   const messages = [
     {
@@ -81,11 +86,9 @@ const Profile: React.FC = () => {
 
         {/* User Info */}
         <div className="flex items-center space-x-4 mb-10">
-          <div className="w-20 h-20 bg-gray-300 rounded-full flex items-center justify-center text-white text-3xl">
-            L
-          </div>
+          <img src={user?.imageUrl} alt="User Avatar" className="w-20 h-20 rounded-full" />
           <div>
-            <h2 className="text-lg bg-[var(--background)] text-[var(--foreground)] font-bold">Leonardo López</h2>
+            <h2 className="text-lg bg-[var(--background)] text-[var(--foreground)] font-bold">{user?.fullName}</h2>
             <p className="text-gray-600 text-sm">Verified Seller</p>
             <p className="text-gray-600 text-sm">Real Estate Agent</p>
           </div>
