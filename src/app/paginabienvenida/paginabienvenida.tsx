@@ -3,19 +3,19 @@ import React from "react";
 import Link from "next/link";
 
 <Link href={`/houses/1`}>
-  <div className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer hover:shadow-lg transition">
-    <img src="casamiramonte.png" alt="House in Mira Monte" className="w-full h-48 object-cover" />
-    <div className="p-4">
-      <h3 className="text-lg font-semibold text-gray-900">House in colonia Mira Monte.</h3>
-      <p className="text-gray-600 text-sm">San Salvador</p>
-      <ul className="flex flex-wrap gap-4 mt-2 text-sm text-gray-700">
-        <li>136m²</li>
-        <li>3🛏️</li>
-        <li>2🛁</li>
-        <li>1🚗</li>
-      </ul>
+    <div className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer hover:shadow-lg transition">
+        <img src="casamiramonte.png" alt="House in Mira Monte" className="w-full h-48 object-cover" />
+        <div className="p-4">
+            <h3 className="text-lg font-semibold text-gray-900">House in colonia Mira Monte.</h3>
+            <p className="text-gray-600 text-sm">San Salvador</p>
+            <ul className="flex flex-wrap gap-4 mt-2 text-sm text-gray-700">
+                <li>136m²</li>
+                <li>3🛏️</li>
+                <li>2🛁</li>
+                <li>1🚗</li>
+            </ul>
+        </div>
     </div>
-  </div>
 </Link>
 const PaginaPrincipal: React.FC = () => {
     return (

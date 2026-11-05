@@ -7,29 +7,39 @@ export async function POST(req: NextRequest) {
     return new Response(JSON.stringify({ error: 'Prompt is empty' }), { status: 400 });
   }
 
-  const ollamaRes = await fetch('http://127.0.0.1:11434/api/generate', {
+  const apiKey = process.env.GEMINI_API_KEY;
+  if (!apiKey) {
+    return new Response(JSON.stringify({ error: 'GEMINI_API_KEY is not configured' }), { status: 500 });
+  }
+
+  // Usamos el modelo gemini-2.5-flash (rápido y eficiente para texto) con streaming activado
+  const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:streamGenerateContent?alt=sse&key=${apiKey}`;
+
+  const geminiRes = await fetch(url, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      model: 'gemma:2b',
-      prompt,
-      stream: true, // IMPORTANT!
+      contents: [
+        {
+          parts: [{ text: prompt }]
+        }
+      ]
     }),
   });
 
-  if (!ollamaRes.ok) {
-    const errorText = await ollamaRes.text();
-    console.error('Ollama API Error:', errorText);
-    return new Response(`Ollama API Error: ${errorText}`, { status: 500 });
+  if (!geminiRes.ok) {
+    const errorText = await geminiRes.text();
+    console.error('Gemini API Error:', errorText);
+    return new Response(`Gemini API Error: ${errorText}`, { status: 500 });
   }
 
-  if (!ollamaRes.body) {
-    return new Response('No response body from Ollama', { status: 500 });
+  if (!geminiRes.body) {
+    return new Response('No response body from Gemini', { status: 500 });
   }
 
   const stream = new ReadableStream({
     async start(controller) {
-      const reader = ollamaRes.body!.getReader();
+      const reader = geminiRes.body!.getReader();
       const decoder = new TextDecoder();
       const encoder = new TextEncoder();
       let buffer = '';
@@ -40,31 +50,26 @@ export async function POST(req: NextRequest) {
 
         buffer += decoder.decode(value, { stream: true });
         const lines = buffer.split('\n');
-        buffer = lines.pop() || ''; // Keep the last partial line in buffer
+        buffer = lines.pop() || '';
 
         for (const line of lines) {
-          if (!line.trim()) continue;
+          const trimmed = line.trim();
+          if (!trimmed.startsWith('data:')) continue;
+
+          // Remover el prefijo "data: " que usa Server-Sent Events (SSE)
+          const jsonStr = trimmed.replace(/^data:\s*/, '');
+          if (!jsonStr) continue;
 
           try {
-            const parsed = JSON.parse(line);
-            if (parsed.response) {
-              controller.enqueue(encoder.encode(parsed.response));
+            const parsed = JSON.parse(jsonStr);
+            // Extraer el texto de la estructura de respuesta de Gemini
+            const textChunk = parsed.candidates?.[0]?.content?.parts?.[0]?.text;
+            if (textChunk) {
+              controller.enqueue(encoder.encode(textChunk));
             }
           } catch (err) {
-            console.warn('Failed to parse line:', line);
+            console.warn('Failed to parse SSE line:', line);
           }
-        }
-      }
-
-      // Flush any remaining buffer
-      if (buffer.trim()) {
-        try {
-          const parsed = JSON.parse(buffer);
-          if (parsed.response) {
-            controller.enqueue(encoder.encode(parsed.response));
-          }
-        } catch (err) {
-          console.warn('Failed to parse final buffer:', buffer);
         }
       }
 
@@ -75,7 +80,7 @@ export async function POST(req: NextRequest) {
   return new Response(stream, {
     headers: {
       'Content-Type': 'text/plain; charset=utf-8',
-      'Transfer-Encoding': 'chunked', // Optional, but helps with clarity
+      'Transfer-Encoding': 'chunked',
     },
   });
 }

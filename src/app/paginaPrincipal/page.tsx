@@ -203,7 +203,7 @@ export default function Page() {
           muted
           playsInline
         >
-          <source src="/video/casitas.mp4" type="video/mp4" />
+          <source src="/video/casitas2.mp4" type="video/mp4" />
           Tu navegador no soporta el video.
         </video>
 
