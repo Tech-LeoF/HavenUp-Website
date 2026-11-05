@@ -6,11 +6,14 @@ import { useState } from "react";
 import { usePathname } from "next/navigation";
 import Modo from "../components/claroOscuro";
 
+
+
 interface NavBarProps {
   role?: "Seller" | "Buyer";
 }
 
 export function NavBar({ role }: NavBarProps) {
+  const pathname = usePathname();
   const { user, isLoaded } = useUser();
   const { signOut } = useClerk(); 
 
@@ -41,7 +44,7 @@ export function NavBar({ role }: NavBarProps) {
     window.location.href = `/buy?${params.toString()}`;
   };
 
-  const pathname = usePathname();
+  
 
 
   return (

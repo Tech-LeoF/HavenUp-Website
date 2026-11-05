@@ -49,17 +49,17 @@ export default function Chat() {
 
   const cleanAIResponse = (text: string) => {
     return text
-      .replace(/\\/g, '')  
-      .replace(/\*/g, '')     
-      .replace(/#+\s/g, '')  
-      .replace(/\n{3,}/g, '\n\n') 
+      .replace(/\\/g, '')
+      .replace(/\*/g, '')
+      .replace(/#+\s/g, '')
+      .replace(/\n{3,}/g, '\n\n')
       .trimStart();
   };
 
   const sendMessage = async () => {
     if (!input.trim() || !activeConv) return;
 
-    let convTitle = activeConv.title === "New Conversation" ? input.slice(0, 25) : activeConv.title;
+    const convTitle = activeConv.title === "New Conversation" ? input.slice(0, 25) : activeConv.title;
 
     const userMsg: Message = { role: 'user', content: input };
     let updatedConv: Conversation = {
@@ -114,7 +114,7 @@ export default function Chat() {
 
   return (
     <div className="w-full min-h-screen bg-gray-900 text-white font-[Poppins] flex">
-      
+
       <div className="w-64 bg-gray-800 border-r border-gray-700 p-4 flex flex-col">
         <div className="flex items-center justify-between mb-4">
           <h2 className="text-lg font-bold">Conversations</h2>
@@ -158,11 +158,11 @@ export default function Chat() {
       </div>
 
       <div className="flex-1 flex flex-col justify-between p-6">
-        
+
         <div className="text-center mb-6">
           <h1 className="text-3xl font-bold mb-2">Your AI Real Estate Assistant</h1>
           <p className="text-gray-400 text-lg max-w-xl mx-auto">
-            I'm here to help you with all your real estate questions. Just ask!
+            I&apos;m here to help you with all your real estate questions. Just ask!
           </p>
         </div>
 

@@ -9,8 +9,8 @@ return (
         <div className="space-y-4 text-center lg:text-left">
         <h1 className="text-[clamp(1.8rem,4vw,2.8rem)] font-semibold">About Us</h1>
             <p className="text-[clamp(1rem,2vw,1.3rem)] leading-relaxed">
-                At HavenUp, we believe finding your ideal home shouldn't be complicated.  
-                We've created a space where buying or selling feels easy, safe, and supported.  
+                At HavenUp, we believe finding your ideal home shouldn&apos;t be complicated.  
+                We&apos;ve created a space where buying or selling feels easy, safe, and supported.  
                 Every step is designed to help you feel confident, with options that truly fit your needs.
             </p>
         </div>

@@ -9,9 +9,16 @@ import "swiper/css/pagination";
 import { useUser } from '@clerk/nextjs';
 
 const Profile: React.FC = () => {
-  const {user, isLoaded} = useUser()
-  
-  if (!isLoaded) return <p>Loading...</p>
+  const { user, isLoaded } = useUser();
+  const [alerts, setAlerts] = useState([true, false]);
+
+  const toggleAlert = (index: number) => {
+    setAlerts((prev) =>
+      prev.map((val, i) => (i === index ? !val : val))
+    );
+  };
+
+  if (!isLoaded) return <p>Loading...</p>;
 
   const messages = [
     {
@@ -25,63 +32,55 @@ const Profile: React.FC = () => {
   ];
 
   const properties = [
-     {
-            id: 1,
-            title: "House in colonia Mira Monte.",
-            city: "Sonsonate",
-            img: "/Imgs/casamiramonte.avif",
-            details: ["136m²", "3🛏", "2🛁", "1🚗"],
-            date: "2023-12-01",
-        },
-        {
-            id: 2,
-            title: "House in colonia San Luis.",
-            city: "San Salvador",
-            img: "/Imgs/casasanluis.jpg",
-            details: ["111m²", "3🛏", "2🛁", "1🚗"],
-            date: "2024-02-15",
-        },
-        {
-            id: 3,
-            title: "House in colonia San Luis Abad.",
-            city: "San Salvador",
-            img: "/Imgs/casaabad.webp",
-            details: ["100m²", "2🛏", "1🛁", "1🚗"],
-            date: "2024-04-10",
-        },
-        {
-            id: 4,
-            title: "House in Residencial Monte Carlo.",
-            city: "San Salvador",
-            img: "/Imgs/casaresidencial.avif",
-            details: ["136m²", "3🛏", "3🛁", "4🚗"],
-            date: "2024-06-01",
-        },
-        {
-            id: 5,
-            title: "House in Ciudad Versalles.",
-            city: "San Juan Opico",
-            img: "/Imgs/casaversalles.png",
-            details: ["460m²", "6🛏", "3🛁", "4🚗"],
-            date: "2024-07-20",
-        },
-        {
-            id: 6,
-            title: "House in Colonia San Benito.",
-            city: "San Salvador",
-            img: "/Imgs/casabenito.jpeg",
-            details: ["710m²", "5🛏", "4🛁", "3🚗"],
-            date: "2024-08-25",
-        },
+    {
+      id: 1,
+      title: "House in colonia Mira Monte.",
+      city: "Sonsonate",
+      img: "/Imgs/casamiramonte.avif",
+      details: ["136m²", "3🛏", "2🛁", "1🚗"],
+      date: "2023-12-01",
+    },
+    {
+      id: 2,
+      title: "House in colonia San Luis.",
+      city: "San Salvador",
+      img: "/Imgs/casasanluis.jpg",
+      details: ["111m²", "3🛏", "2🛁", "1🚗"],
+      date: "2024-02-15",
+    },
+    {
+      id: 3,
+      title: "House in colonia San Luis Abad.",
+      city: "San Salvador",
+      img: "/Imgs/casaabad.webp",
+      details: ["100m²", "2🛏", "1🛁", "1🚗"],
+      date: "2024-04-10",
+    },
+    {
+      id: 4,
+      title: "House in Residencial Monte Carlo.",
+      city: "San Salvador",
+      img: "/Imgs/casaresidencial.avif",
+      details: ["136m²", "3🛏", "3🛁", "4🚗"],
+      date: "2024-06-01",
+    },
+    {
+      id: 5,
+      title: "House in Ciudad Versalles.",
+      city: "San Juan Opico",
+      img: "/Imgs/casaversalles.png",
+      details: ["460m²", "6🛏", "3🛁", "4🚗"],
+      date: "2024-07-20",
+    },
+    {
+      id: 6,
+      title: "House in Colonia San Benito.",
+      city: "San Salvador",
+      img: "/Imgs/casabenito.jpeg",
+      details: ["710m²", "5🛏", "4🛁", "3🚗"],
+      date: "2024-08-25",
+    },
   ];
-
-  const [alerts, setAlerts] = useState([true, false]);
-
-  const toggleAlert = (index: number) => {
-    setAlerts((prev) =>
-      prev.map((val, i) => (i === index ? !val : val))
-    );
-  };
 
   return (
     <>
@@ -90,8 +89,8 @@ const Profile: React.FC = () => {
 
         {/* Perfil */}
         <div className="flex items-center space-x-4 mb-10">
-          <img src={user?.imageUrl} alt="Buyer Avatar" 
-          className='w-20 h-20 rounded-full'
+          <img src={user?.imageUrl} alt="Buyer Avatar"
+            className='w-20 h-20 rounded-full'
           />
           <div>
             <h2 className="text-lg bg-[var(--background)] text-[var(--foreground)] font-bold">{user?.fullName}</h2>
@@ -221,10 +220,10 @@ const Profile: React.FC = () => {
         <div className="space-y-4 mb-6">
           {alerts.map((enabled, index) => (
             <div key={index} className="flex items-center justify-between">
-              <button 
-              type="button"
-              aria-label="Search"
-              className="w-10 h-10 border rounded-md flex items-center justify-center hover:bg-gray-100 transition">
+              <button
+                type="button"
+                aria-label="Search"
+                className="w-10 h-10 border rounded-md flex items-center justify-center hover:bg-gray-100 transition">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-5 w-5 text-gray-600"
@@ -241,17 +240,14 @@ const Profile: React.FC = () => {
                 </svg>
               </button>
 
-              
               <button
                 onClick={() => toggleAlert(index)}
-                className={`relative w-12 h-6 flex items-center rounded-full transition-colors ${
-                  enabled ? "bg-[#5A6F85]" : "bg-gray-300"
-                }`}
+                className={`relative w-12 h-6 flex items-center rounded-full transition-colors ${enabled ? "bg-[#5A6F85]" : "bg-gray-300"
+                  }`}
               >
                 <span
-                  className={`absolute w-5 h-5 bg-gray-100 rounded-full shadow transform transition-transform ${
-                    enabled ? "translate-x-6" : "translate-x-1"
-                  }`}
+                  className={`absolute w-5 h-5 bg-gray-100 rounded-full shadow transform transition-transform ${enabled ? "translate-x-6" : "translate-x-1"
+                    }`}
                 />
               </button>
             </div>

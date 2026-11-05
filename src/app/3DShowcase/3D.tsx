@@ -94,7 +94,7 @@ export default function HouseViewer() {
             <div className="w-100 h-120 bg-[#F5F5DC] rounded-lg flex flex-col justify-evenly items-center">
 
                 <div className="font-bold text-black text-2xl">
-                    <p>Room's Information</p>
+                    <p>Room&apos;s Information</p>
                 </div>
 
                 <div className="w-80 h-20 bg-[#FFD166] rounded-lg text-black flex flex-col justify-center items-center">

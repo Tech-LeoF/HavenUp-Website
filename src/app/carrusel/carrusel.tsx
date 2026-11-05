@@ -48,7 +48,7 @@ export default function Carrusel(){
             >
             <h1 className="text-[clamp(2rem,3vw,5rem)] font-bold pt-[3rem]">Welcome to HavenUp!</h1><br />
             <p className="mt-[1rem]  pr-[3rem] text-[clamp(1rem,2vw,5rem)]">
-            We are here to help you buy or sell your home without any hassle. Browse our platform and let us guide you every step so you can find exactly what you're looking for.
+            We are here to help you buy or sell your home without any hassle. Browse our platform and let us guide you every step so you can find exactly what you&apos;re looking for.
             </p>
             </div>
             <Link href="/login">

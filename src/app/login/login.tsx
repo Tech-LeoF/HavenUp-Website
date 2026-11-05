@@ -53,7 +53,7 @@ export default function Login() {
     >
       <h2 className="text-3xl font-bold text-center text-[#073B3A] drop-shadow-sm">Welcome Back</h2>
       <p className="text-center text-[#629584] text-sm mt-2">
-        We're glad you're here — let's get you signed in.
+        We&apos;re glad you&apos;re here — let&apos;s get you signed in.
       </p>
 
       <form onSubmit={handleSignIn} className="space-y-6 mt-6">
